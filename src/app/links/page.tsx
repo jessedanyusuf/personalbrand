@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Instagram, Youtube, Twitter, Linkedin, Facebook, ExternalLink, Mail, MessageSquare } from "lucide-react";
+import { Instagram, Youtube, Twitter, Linkedin, Facebook, ExternalLink, Mail, MessageSquare, Headphones, FileText } from "lucide-react";
 import { FaTiktok } from "react-icons/fa";
 
 export default function Links() {
@@ -47,27 +47,27 @@ export default function Links() {
       title: "The Cave",
       description: "Find your purpose, fulfill your potential",
       actions: [
-        { text: "Watch", url: "https://www.youtube.com/@jessedanyusuf" },
-        { text: "Listen to Podcast", url: "https://pod.link/1727199920" },
-        { text: "Read Newsletter", url: "https://thecavenews.substack.com/" },
+        { text: "Watch", url: "https://www.youtube.com/@jessedanyusuf", icon: Youtube },
+        { text: "Listen to Podcast", url: "https://pod.link/1727199920", icon: Headphones },
+        { text: "Read Newsletter", url: "https://thecavenews.substack.com/", icon: FileText },
       ],
     },
     {
       title: "Campfyre",
       description: "Helping creators make a living doing what they love",
       actions: [
-        { text: "Watch", url: "https://www.youtube.com/@campfyreco" },
-        { text: "Listen to Podcast", url: "https://pod.link/1448913888" },
-        { text: "Read Newsletter", url: "https://campfyre.substack.com/" },
+        { text: "Watch", url: "https://www.youtube.com/@campfyreco", icon: Youtube },
+        { text: "Listen to Podcast", url: "https://pod.link/1448913888", icon: Headphones },
+        { text: "Read Newsletter", url: "https://campfyre.substack.com/", icon: FileText },
       ],
     },
     {
       title: "One City",
       description: "A gospel movement for everyone, everywhere",
       actions: [
-        { text: "Watch", url: "https://www.youtube.com/@onecityabuja" },
-        { text: "Listen to Podcast", url: "https://pod.link/1683790739" },
-        { text: "Read Newsletter", url: "https://onecityabuja.substack.com/" },
+        { text: "Watch", url: "https://www.youtube.com/@onecityabuja", icon: Youtube },
+        { text: "Listen to Podcast", url: "https://pod.link/1683790739", icon: Headphones },
+        { text: "Read Newsletter", url: "https://onecityabuja.substack.com/", icon: FileText },
       ],
     },
   ];
