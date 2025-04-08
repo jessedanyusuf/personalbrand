@@ -6,6 +6,7 @@ import { MobileMenu } from "@/components/mobile-menu";
 import { FixedCarousel } from "@/components/fixed-carousel";
 import { carouselItems } from "@/components/carousel-items";
 import { BookCarousel } from "@/components/book-carousel";
+import Footer from "@/components/footer";
 
 // Books data for carousel
 const bookItems = [
@@ -325,6 +326,7 @@ export default function Home() {
           </Link>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }
