@@ -1,83 +1,115 @@
-import { Instagram, Youtube, Twitter, Linkedin, Facebook, Mail } from 'lucide-react'
 import Link from 'next/link'
 
 export default function Footer() {
   return (
-    <footer className="bg-black py-12">
+    <footer className="bg-black py-16 sm:py-20 md:py-24 relative">
+      {/* Navigation Links - Top Section */}
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-16 mb-16 md:mb-24">
+          {/* Column 1 */}
           <div>
-            <h3 className="text-xl font-bold mb-4">Connect</h3>
-            <div className="flex space-x-4 flex-wrap">
-              <a href="https://instagram.com/jessedanyusuf" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white transition-colors">
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a href="https://youtube.com/@jessedanyusuf" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white transition-colors">
-                <Youtube className="w-5 h-5" />
-              </a>
-              <a href="https://twitter.com/jessedanyusuf" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white transition-colors">
-                <Twitter className="w-5 h-5" />
-              </a>
-              <a href="https://linkedin.com/in/jessedanyusuf" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white transition-colors">
-                <Linkedin className="w-5 h-5" />
-              </a>
-              <a href="https://facebook.com/jessedanyusuf" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white transition-colors">
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a href="https://tiktok.com/@jessedanyusuf" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white transition-colors">
-                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
-                </svg>
-              </a>
-            </div>
-          </div>
-          <div>
-            <h3 className="text-xl font-bold mb-4">Quick Links</h3>
-            <ul className="space-y-2">
+            <ul className="space-y-3">
               <li>
-                <Link href="/about" className="text-white/80 hover:text-white transition-colors">
-                  About
+                <Link href="/about" className="text-white hover:text-white/70 transition-colors text-sm uppercase tracking-widest">
+                  ABOUT
                 </Link>
               </li>
               <li>
-                <Link href="/books" className="text-white/80 hover:text-white transition-colors">
-                  Books
+                <Link href="/books" className="text-white hover:text-white/70 transition-colors text-sm uppercase tracking-widest">
+                  BOOKS
                 </Link>
               </li>
               <li>
-                <Link href="/podcasts" className="text-white/80 hover:text-white transition-colors">
-                  Podcasts
+                <Link href="/podcasts" className="text-white hover:text-white/70 transition-colors text-sm uppercase tracking-widest">
+                  PODCASTS
                 </Link>
               </li>
             </ul>
           </div>
+
+          {/* Column 2 */}
           <div>
-            <h3 className="text-xl font-bold mb-4">Resources</h3>
-            <ul className="space-y-2">
+            <ul className="space-y-3">
               <li>
-                <Link href="/newsletters" className="text-white/80 hover:text-white transition-colors">
-                  Newsletters
+                <Link href="/newsletters" className="text-white hover:text-white/70 transition-colors text-sm uppercase tracking-widest">
+                  NEWSLETTERS
                 </Link>
               </li>
               <li>
-                <Link href="/shop" className="text-white/80 hover:text-white transition-colors">
-                  Shop
+                <Link href="/shop" className="text-white hover:text-white/70 transition-colors text-sm uppercase tracking-widest">
+                  SHOP
+                </Link>
+              </li>
+              <li>
+                <Link href="/speaking" className="text-white hover:text-white/70 transition-colors text-sm uppercase tracking-widest">
+                  SPEAKING
                 </Link>
               </li>
             </ul>
           </div>
+
+          {/* Column 3 */}
           <div>
-            <h3 className="text-xl font-bold mb-4">Contact</h3>
-            <a href="mailto:hello@jessedanyusuf.com" className="text-white/80 hover:text-white transition-colors flex items-center">
-              <Mail className="w-5 h-5 mr-2" />
-              hello@jessedanyusuf.com
-            </a>
+            <ul className="space-y-3">
+              <li>
+                <a href="https://instagram.com/jessedanyusuf" target="_blank" rel="noopener noreferrer" className="text-white hover:text-white/70 transition-colors text-sm uppercase tracking-widest">
+                  INSTAGRAM
+                </a>
+              </li>
+              <li>
+                <a href="https://youtube.com/@jessedanyusuf" target="_blank" rel="noopener noreferrer" className="text-white hover:text-white/70 transition-colors text-sm uppercase tracking-widest">
+                  YOUTUBE
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/jessedanyusuf" target="_blank" rel="noopener noreferrer" className="text-white hover:text-white/70 transition-colors text-sm uppercase tracking-widest">
+                  TWITTER
+                </a>
+              </li>
+            </ul>
           </div>
-        </div>
-        <div className="mt-12 pt-8 border-t border-white/10 text-center text-white/60">
-          <p>&copy; {new Date().getFullYear()} Jesse Dan-Yusuf. All rights reserved.</p>
+
+          {/* Column 4 */}
+          <div>
+            <ul className="space-y-3">
+              <li>
+                <a href="https://linkedin.com/in/jessedanyusuf" target="_blank" rel="noopener noreferrer" className="text-white hover:text-white/70 transition-colors text-sm uppercase tracking-widest">
+                  LINKEDIN
+                </a>
+              </li>
+              <li>
+                <a href="mailto:hello@jessedanyusuf.com" className="text-white hover:text-white/70 transition-colors text-sm uppercase tracking-widest">
+                  EMAIL
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
+
+      {/* Bottom Section - Full Width */}
+      <div className="w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+        <div className="flex flex-col md:flex-row justify-between items-center md:items-baseline w-full gap-6 md:gap-0 pt-8 md:pt-16">
+          {/* Copyright Section - Left */}
+          <div className="flex items-center gap-3">
+            <div className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-none">
+              ©2025
+            </div>
+            <div className="text-white text-xs uppercase tracking-widest leading-tight">
+              ALL RIGHTS<br />RESERVED.
+            </div>
+          </div>
+
+          {/* Company Name - Right */}
+          <div>
+            <h2 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-none whitespace-nowrap">
+              THE JESSE DAN-YUSUF CO.
+            </h2>
+          </div>
+        </div>
+      </div>
+
+
     </footer>
   )
 }
