@@ -3,18 +3,45 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { BookCarousel } from '@/components/book-carousel';
-
-interface BookItem {
-  title: string;
-  subtitle: string;
-  description: string;
-  releaseDate: string;
-  link: string;
-  linkText: string;
-}
+import { BookItem } from '@/types';
+import { movements } from '@/data/movements';
+import { brands } from '@/data/brands';
+import { resources } from '@/data/resources';
 
 interface WorkingOnTabsProps {
   bookItems: BookItem[];
+}
+
+// Component to render items in a grid (for 4 or fewer items)
+function ItemGrid({ items }: { items: BookItem[] }) {
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+      {items.map((item, index) => (
+        <div key={index} className="flex flex-row gap-4 sm:gap-5 md:gap-6 border border-white/10 rounded-lg p-4 sm:p-5 md:p-6 hover:border-white/20 transition-all">
+          <div className="w-20 h-28 sm:w-24 sm:h-32 md:w-28 md:h-36 bg-gray-800 rounded-md flex items-center justify-center border border-white/10 overflow-hidden flex-shrink-0">
+            <div className="text-center p-2 sm:p-3">
+              <h4 className="font-bold text-sm sm:text-base md:text-lg leading-tight">{item.title}</h4>
+              <p className="text-xs mt-1 text-gray-400">{item.releaseDate}</p>
+            </div>
+          </div>
+          <div className="flex-1 flex flex-col min-w-0">
+            <h4 className="text-base sm:text-lg md:text-xl font-bold mb-2 sm:mb-3 leading-tight">{item.subtitle}</h4>
+            <p className="text-sm sm:text-base text-gray-400 mb-3 sm:mb-4 leading-relaxed line-clamp-3">
+              {item.description}
+            </p>
+            <div className="mt-auto">
+              <Link 
+                href={item.link} 
+                className="inline-block px-4 sm:px-5 py-2 sm:py-2.5 border border-white/20 rounded-md text-white hover:bg-white/10 transition-colors text-sm sm:text-base"
+              >
+                {item.linkText}
+              </Link>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
 }
 
 export default function WorkingOnTabs({ bookItems }: WorkingOnTabsProps) {
@@ -27,96 +54,6 @@ export default function WorkingOnTabs({ bookItems }: WorkingOnTabsProps) {
     { id: 'resources', label: 'Resources I\'m Creating' }
   ];
 
-  // Data for each category in carousel format
-  const movementsData = [
-    {
-      title: "ONE CITY CHURCH",
-      subtitle: "One City Church",
-      description: "Discover a gospel-centered community focused on spiritual growth and cultural renewal.",
-      releaseDate: "Active",
-      link: "/one-city-church",
-      linkText: "Learn more"
-    },
-    {
-      title: "THE CAVE",
-      subtitle: "The Cave",
-      description: "A community for people who want to find their purpose and fulfil their potential through deep insights and meaningful connections.",
-      releaseDate: "Active",
-      link: "/newsletters/the-cave",
-      linkText: "Join now"
-    },
-    {
-      title: "CAMPFYRE",
-      subtitle: "Campfyre",
-      description: "A thriving community for creative entrepreneurs who want to build purpose-driven brands and movements.",
-      releaseDate: "Active",
-      link: "/campfyre",
-      linkText: "Explore"
-    }
-  ];
-
-  const brandsData = [
-    {
-      title: "FYREWORKS",
-      subtitle: "Fyreworks",
-      description: "Creative agency and brand development for purpose-driven businesses and visionary leaders.",
-      releaseDate: "Active",
-      link: "/fyreworks",
-      linkText: "Learn more"
-    },
-    {
-      title: "LANTERN",
-      subtitle: "Lantern",
-      description: "Tools and resources for content creators and educators to build meaningful educational experiences.",
-      releaseDate: "Coming Soon",
-      link: "/lantern",
-      linkText: "Join waitlist"
-    },
-    {
-      title: "ROCKET",
-      subtitle: "Rocket",
-      description: "Platform for launching and scaling digital products that serve and empower creative entrepreneurs.",
-      releaseDate: "Coming Soon",
-      link: "/rocket",
-      linkText: "Join waitlist"
-    }
-  ];
-
-  const resourcesData = [
-    {
-      title: "CREATOR'S TOOLKIT",
-      subtitle: "Creator's Toolkit",
-      description: "Templates, frameworks, and guides for building a purpose-driven brand that makes a lasting impact.",
-      releaseDate: "Available",
-      link: "/resources/creator-toolkit",
-      linkText: "Get toolkit"
-    },
-    {
-      title: "ONLINE COURSES",
-      subtitle: "Online Courses",
-      description: "Deep-dive training on entrepreneurship, creativity, and faith-based leadership for purpose-driven creators.",
-      releaseDate: "Available",
-      link: "/courses",
-      linkText: "Browse courses"
-    },
-    {
-      title: "WEEKLY NEWSLETTER",
-      subtitle: "Weekly Newsletter",
-      description: "Insights on purpose, creativity, and building meaningful work delivered to your inbox every week.",
-      releaseDate: "Active",
-      link: "/newsletter",
-      linkText: "Subscribe"
-    },
-    {
-      title: "SPEAKING & EVENTS",
-      subtitle: "Speaking & Events",
-      description: "Workshops, conferences, and speaking engagements on entrepreneurship, creativity, and purpose-driven leadership.",
-      releaseDate: "Ongoing",
-      link: "/events",
-      linkText: "Book speaking"
-    }
-  ];
-
   const renderContent = () => {
     switch (activeTab) {
       case 'movements':
@@ -125,7 +62,8 @@ export default function WorkingOnTabs({ bookItems }: WorkingOnTabsProps) {
             <p className="text-lg sm:text-xl text-gray-400 mb-4 sm:mb-6 leading-relaxed max-w-4xl">
               Gathering people around gospel, growth, and creativity.
             </p>
-            <BookCarousel books={movementsData} title="" />
+            {/* 3 items - show in grid, no carousel needed */}
+            <ItemGrid items={movements} />
           </div>
         );
 
@@ -135,7 +73,8 @@ export default function WorkingOnTabs({ bookItems }: WorkingOnTabsProps) {
             <p className="text-lg sm:text-xl text-gray-400 mb-4 sm:mb-6 leading-relaxed max-w-4xl">
               Businesses and tools that serve visionaries and fund the work.
             </p>
-            <BookCarousel books={brandsData} title="" />
+            {/* 3 items - show in grid, no carousel needed */}
+            <ItemGrid items={brands} />
           </div>
         );
 
@@ -145,6 +84,7 @@ export default function WorkingOnTabs({ bookItems }: WorkingOnTabsProps) {
             <p className="text-lg sm:text-xl text-gray-400 mb-4 sm:mb-6 leading-relaxed max-w-4xl">
               Books that inspire purpose-driven living and creative entrepreneurship.
             </p>
+            {/* 9 items - use carousel */}
             <BookCarousel books={bookItems} title="" />
           </div>
         );
@@ -155,7 +95,8 @@ export default function WorkingOnTabs({ bookItems }: WorkingOnTabsProps) {
             <p className="text-lg sm:text-xl text-gray-400 mb-4 sm:mb-6 leading-relaxed max-w-4xl">
               Tools, courses, and content to help you discover your purpose and build meaningful work.
             </p>
-            <BookCarousel books={resourcesData} title="" />
+            {/* 4 items - show in grid, no carousel needed */}
+            <ItemGrid items={resources} />
           </div>
         );
 
