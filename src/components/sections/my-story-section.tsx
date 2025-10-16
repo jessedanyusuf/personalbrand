@@ -13,15 +13,15 @@ export function MyStorySection() {
       <div className="container px-4">
         <h3 className={`text-xl sm:text-2xl font-bold mb-8 sm:mb-12 md:mb-16 text-center uppercase tracking-wider animate-on-scroll ${myStoryAnimation.isVisible ? 'visible animate-slide-up' : ''}`}>My Story</h3>
         <div className="flex flex-col md:flex-row gap-8 sm:gap-12 md:gap-16 items-center">
-          <div className={`w-full md:w-2/5 h-[400px] sm:h-[450px] md:h-[500px] relative rounded-xl overflow-hidden border border-white/10 shadow-lg animate-on-scroll ${myStoryAnimation.isVisible ? 'visible animate-slide-left' : ''}`} style={{ animationDelay: '0.2s' }}>
-            <Image 
-              src="/images/x-2614.jpg" 
-              alt="Jesse Dan-Yusuf" 
-              fill 
-              className="object-cover object-center"
-              priority
-            />
-          </div>
+            <div className={`w-full md:w-2/5 h-[400px] sm:h-[450px] md:h-[500px] relative rounded-xl overflow-hidden border border-white/10 shadow-lg animate-on-scroll ${myStoryAnimation.isVisible ? 'visible animate-slide-left' : ''}`} style={{ animationDelay: '0.2s' }}>
+              <Image 
+                src="/images/x-2622.JPG" 
+                alt="Jesse Dan-Yusuf" 
+                fill 
+                className="object-cover object-center"
+                priority
+              />
+            </div>
           <div className={`w-full md:w-3/5 animate-on-scroll ${myStoryAnimation.isVisible ? 'visible animate-slide-right' : ''}`} style={{ animationDelay: '0.4s' }}>
             <p className="text-lg sm:text-xl text-gray-300 leading-relaxed mb-6 sm:mb-8">
               I'm Jesse Dan-Yusuf, a creator, entrepreneur, and pastor committed to helping people discover their purpose and fulfill their potential. Born and raised in Nigeria, my journey has taken me through creative entrepreneurship, ministry leadership, and personal development coaching.

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useTiltEffect } from "@/hooks/useTiltEffect";
 import { CountdownTimer } from "@/components/countdown-timer";
@@ -23,46 +24,30 @@ export function FeaturedBookSection() {
         {/* Glassmorphism container */}
         <div className="bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 shadow-2xl p-8 sm:p-12 md:p-16">
           <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
-            {/* Left: Book Cover Mockup */}
+            {/* Left: Book Cover Image */}
             <div className={`animate-on-scroll ${featuredAnimation.isVisible ? 'visible animate-slide-left' : ''}`}>
               <div className="relative">
                 {/* Subtle glow effect behind book */}
                 <div className="absolute inset-0 bg-white/10 blur-3xl scale-110 opacity-50"></div>
                 
-                {/* Book cover mockup with tilt effect - Glassmorphism style */}
+                {/* Book cover image with tilt effect */}
                 <div 
                   ref={bookTilt.ref}
                   style={bookTilt.style}
                   {...bookTilt.handlers}
-                  className="relative bg-white/10 backdrop-blur-2xl rounded-2xl shadow-2xl aspect-[2/3] max-w-md mx-auto border border-white/20 overflow-hidden cursor-pointer"
+                  className="relative rounded-2xl shadow-2xl aspect-[2/3] max-w-md mx-auto overflow-hidden cursor-pointer"
                 >
-                  {/* Gradient overlay for depth */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-white/5 to-transparent"></div>
+                  {/* Book cover image */}
+                  <Image
+                    src="/images/Masterpiece Book Instagram Post.png"
+                    alt="Masterpiece Book Cover"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
                   
-                  {/* Shine effect */}
-                  <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent"></div>
-                  
-                  <div className="flex flex-col items-center justify-center h-full p-8 sm:p-12 text-center relative z-10">
-                    <div className="space-y-6">
-                      <div className="text-sm sm:text-base uppercase tracking-[0.3em] text-gray-300 font-light">
-                        Jesse Dan-Yusuf
-                      </div>
-                      <h3 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
-                        MASTERPIECE
-                      </h3>
-                      <div className="w-24 h-px bg-white/40 mx-auto"></div>
-                      <p className="text-sm sm:text-base text-gray-200 leading-relaxed">
-                        Find Your Story<br />In God's Story
-                      </p>
-                    </div>
-                    
-                    {/* Release date badge - Glassmorphism */}
-                    <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
-                      <div className="px-6 py-2 bg-white/15 backdrop-blur-md border border-white/30 rounded-full text-xs sm:text-sm font-medium shadow-lg">
-                        January 31, 2026
-                      </div>
-                    </div>
-                  </div>
+                  {/* Subtle glassmorphism overlay for depth */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-black/20 pointer-events-none"></div>
                 </div>
               </div>
             </div>
@@ -70,9 +55,9 @@ export function FeaturedBookSection() {
             {/* Right: Content */}
             <div className={`animate-on-scroll ${featuredAnimation.isVisible ? 'visible animate-slide-right' : ''}`} style={{ animationDelay: '0.2s' }}>
               <div className="space-y-6">
-                {/* Tag - Glassmorphism */}
+                {/* Tag - Red pill */}
                 <div className="inline-block">
-                  <p className="text-xs sm:text-sm uppercase tracking-wider text-white font-semibold px-4 py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full shadow-lg">
+                  <p className="text-xs sm:text-sm uppercase tracking-wider text-white font-semibold px-4 py-2 bg-red-600 rounded-full shadow-lg">
                     {featuredBookExtended.tagline}
                   </p>
                 </div>
