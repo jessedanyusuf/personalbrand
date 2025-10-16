@@ -15,7 +15,7 @@ export function HeroSection() {
         <div className="absolute bottom-0 left-0 right-0 h-[800px] bg-gradient-to-t from-black to-transparent z-10"></div>
         <div className="w-full h-full bg-black">
           <Image 
-            src="/images/TinyPNG Image Compression/IMG_2359.JPG" 
+            src="/images/hero-portrait.jpg" 
             alt="Jesse Dan-Yusuf" 
             fill 
             className="object-cover object-center"

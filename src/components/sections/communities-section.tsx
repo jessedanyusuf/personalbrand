@@ -14,8 +14,15 @@ export function CommunitiesSection() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
         {/* The Cave */}
         <div className={`group bg-black rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-white/10 animate-on-scroll ${communitiesAnimation.isVisible ? 'visible animate-slide-up' : ''}`} style={{ animationDelay: '0.1s' }}>
-          <div className="h-48 sm:h-56 md:h-64 flex items-center justify-center bg-gray-900">
-            <h3 className="text-2xl sm:text-3xl font-bold group-hover:scale-105 transition-transform duration-300 text-center px-4">The Cave</h3>
+          <div className="h-48 sm:h-56 md:h-64 relative bg-gray-900 overflow-hidden">
+            <Image 
+              src="/images/jesse-portrait.jpg" 
+              alt="The Cave - Jesse Dan-Yusuf" 
+              fill
+              className="object-cover object-center group-hover:scale-110 transition-transform duration-500"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+            <h3 className="absolute bottom-4 left-1/2 -translate-x-1/2 text-2xl sm:text-3xl font-bold text-center px-4 w-full">The Cave</h3>
           </div>
           <div className="p-6 sm:p-8 flex flex-col min-h-[280px] sm:min-h-[320px]">
             <p className="text-base sm:text-lg text-gray-400 mb-auto leading-relaxed">
@@ -48,13 +55,15 @@ export function CommunitiesSection() {
 
         {/* Campfyre */}
         <div className={`group bg-black rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-white/10 animate-on-scroll ${communitiesAnimation.isVisible ? 'visible animate-slide-up' : ''}`} style={{ animationDelay: '0.2s' }}>
-          <div className="h-48 sm:h-56 md:h-64 flex items-center justify-center bg-gray-900 relative overflow-hidden">
+          <div className="h-48 sm:h-56 md:h-64 relative bg-gray-900 overflow-hidden">
             <Image 
               src="/images/campyfre.png" 
-              alt="Campfyre Logo" 
-              fill 
-              className="object-contain p-8 group-hover:scale-105 transition-transform duration-300"
+              alt="Campfyre Community" 
+              fill
+              className="object-cover object-center group-hover:scale-110 transition-transform duration-500"
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+            <h3 className="absolute bottom-4 left-1/2 -translate-x-1/2 text-2xl sm:text-3xl font-bold text-center px-4 w-full">Campfyre</h3>
           </div>
           <div className="p-6 sm:p-8 flex flex-col min-h-[280px] sm:min-h-[320px]">
             <p className="text-base sm:text-lg text-gray-400 mb-auto leading-relaxed">
@@ -87,13 +96,15 @@ export function CommunitiesSection() {
 
         {/* One City */}
         <div className={`group bg-black rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-white/10 animate-on-scroll ${communitiesAnimation.isVisible ? 'visible animate-slide-up' : ''}`} style={{ animationDelay: '0.3s' }}>
-          <div className="h-48 sm:h-56 md:h-64 flex items-center justify-center bg-gray-900 relative overflow-hidden">
+          <div className="h-48 sm:h-56 md:h-64 relative bg-gray-900 overflow-hidden">
             <Image 
               src="/images/One City.jpeg" 
-              alt="One City Logo" 
-              fill 
-              className="object-contain p-8 group-hover:scale-105 transition-transform duration-300"
+              alt="One City Church" 
+              fill
+              className="object-cover object-center group-hover:scale-110 transition-transform duration-500"
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+            <h3 className="absolute bottom-4 left-1/2 -translate-x-1/2 text-2xl sm:text-3xl font-bold text-center px-4 w-full">One City</h3>
           </div>
           <div className="p-6 sm:p-8 flex flex-col min-h-[280px] sm:min-h-[320px]">
             <p className="text-base sm:text-lg text-gray-400 mb-auto leading-relaxed">
