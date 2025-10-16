@@ -17,9 +17,13 @@ function ItemGrid({ items }: { items: BookItem[] }) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
       {items.map((item, index) => (
-        <div key={index} className="flex flex-row gap-4 sm:gap-5 md:gap-6 border border-white/10 rounded-lg p-4 sm:p-5 md:p-6 hover:border-white/20 transition-all">
-          <div className="w-20 h-28 sm:w-24 sm:h-32 md:w-28 md:h-36 bg-gray-800 rounded-md flex items-center justify-center border border-white/10 overflow-hidden flex-shrink-0">
-            <div className="text-center p-2 sm:p-3">
+        <div key={index} className="flex flex-row gap-4 sm:gap-5 md:gap-6 border border-white/10 rounded-lg p-4 sm:p-5 md:p-6 hover:border-white/20 transition-all group">
+          <div className="w-20 h-28 sm:w-24 sm:h-32 md:w-28 md:h-36 bg-white/10 backdrop-blur-md rounded-md flex items-center justify-center border border-white/20 overflow-hidden flex-shrink-0 relative group-hover:bg-white/15 transition-all">
+            {/* Gradient overlay for depth */}
+            <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent pointer-events-none"></div>
+            {/* Shine effect */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent pointer-events-none"></div>
+            <div className="text-center p-2 sm:p-3 relative z-10">
               <h4 className="font-bold text-sm sm:text-base md:text-lg leading-tight">{item.title}</h4>
               <p className="text-xs mt-1 text-gray-400">{item.releaseDate}</p>
             </div>

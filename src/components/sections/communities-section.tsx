@@ -19,7 +19,7 @@ export function CommunitiesSection() {
               src="/images/jesse-portrait.jpg" 
               alt="The Cave - Jesse Dan-Yusuf" 
               fill
-              className="object-cover object-center group-hover:scale-110 transition-transform duration-500"
+              className="object-cover object-top group-hover:scale-110 transition-transform duration-500"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
             <h3 className="absolute bottom-4 left-1/2 -translate-x-1/2 text-2xl sm:text-3xl font-bold text-center px-4 w-full">The Cave</h3>
