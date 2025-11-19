@@ -4,3 +4,10 @@
 
 [build.environment]
   NODE_VERSION = "20"
+
+[[redirects]]
+  from = "/newsletter"
+  to = "https://readmasterpiece.substack.com/"
+  status = 307
+  force = true
+

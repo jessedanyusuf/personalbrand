@@ -11,7 +11,7 @@ export function NewsletterSection() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("loading");
-    
+
     // TODO: Integrate with your newsletter service (e.g., ConvertKit, Mailchimp, etc.)
     // For now, just simulate success
     setTimeout(() => {
@@ -41,31 +41,17 @@ export function NewsletterSection() {
                 </p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="max-w-md mx-auto">
-                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                  <input
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Enter your email"
-                    required
-                    disabled={status === "loading"}
-                    className="flex-1 px-6 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent disabled:opacity-50 disabled:cursor-not-allowed"
-                  />
-                  <button
-                    type="submit"
-                    disabled={status === "loading"}
-                    className="px-8 py-4 bg-white text-black font-bold rounded-lg hover:bg-gray-200 transition-all duration-200 transform hover:scale-105 shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none whitespace-nowrap"
-                  >
-                    {status === "loading" ? "Subscribing..." : "Subscribe"}
-                  </button>
-                </div>
-                {status === "error" && (
-                  <p className="text-red-400 text-sm mt-3">
-                    Something went wrong. Please try again.
-                  </p>
-                )}
-              </form>
+              <div className="flex justify-center">
+                <iframe
+                  src="https://readmasterpiece.substack.com/embed"
+                  width="480"
+                  height="320"
+                  style={{ border: '1px solid #EEE', background: 'white' }}
+                  frameBorder="0"
+                  scrolling="no"
+                  className="max-w-full rounded-lg"
+                />
+              </div>
             )}
 
             <p className="text-sm text-gray-500 mt-6">
