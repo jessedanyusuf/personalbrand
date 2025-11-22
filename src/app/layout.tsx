@@ -133,7 +133,7 @@ export default function RootLayout({
       </head>
       <body suppressHydrationWarning className="min-h-screen bg-black text-white flex flex-col">
         <main className="flex-grow">{children}</main>
-        
+
       </body>
     </html>
   );

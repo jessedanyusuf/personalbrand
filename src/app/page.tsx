@@ -9,6 +9,7 @@ import { CommunitiesSection } from "@/components/sections/communities-section";
 import { WorkingOnSection } from "@/components/sections/working-on-section";
 import { MyStorySection } from "@/components/sections/my-story-section";
 import { NewsletterSection } from "@/components/sections/newsletter-section";
+import { MasterClassSection } from "@/components/sections/masterclass-section";
 import { ShopSection } from "@/components/sections/shop-section";
 
 export default function Home() {
@@ -19,9 +20,10 @@ export default function Home() {
       <LogoSection />
       <FeaturedBookSection />
       <CommunitiesSection />
-      <WorkingOnSection />
+      {/* <WorkingOnSection /> */}
       <MyStorySection />
       <NewsletterSection />
+      <MasterClassSection />
       <ShopSection />
       <Footer />
     </div>
