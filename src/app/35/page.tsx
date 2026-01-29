@@ -10,10 +10,20 @@ export const metadata: Metadata = {
     openGraph: {
         title: "35 on the 31st",
         description: "Jesse Dan-Yusuf's 35th Birthday Wishlist",
+        images: [
+            {
+                url: "/images/hero-portrait.jpg",
+                width: 1200,
+                height: 630,
+                alt: "Jesse Dan-Yusuf"
+            }
+        ]
     },
     twitter: {
+        card: "summary_large_image",
         title: "35 on the 31st",
         description: "Jesse Dan-Yusuf's 35th Birthday Wishlist",
+        images: ["/images/hero-portrait.jpg"]
     }
 };
 
