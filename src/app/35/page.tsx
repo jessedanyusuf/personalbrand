@@ -3,8 +3,18 @@ import React from 'react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: "35 on the 31st",
+    title: {
+        absolute: "35 on the 31st",
+    },
     description: "Jesse Dan-Yusuf's 35th Birthday Wishlist",
+    openGraph: {
+        title: "35 on the 31st",
+        description: "Jesse Dan-Yusuf's 35th Birthday Wishlist",
+    },
+    twitter: {
+        title: "35 on the 31st",
+        description: "Jesse Dan-Yusuf's 35th Birthday Wishlist",
+    }
 };
 
 export default function BirthdayWishlistPage() {
