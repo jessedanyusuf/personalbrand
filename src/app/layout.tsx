@@ -3,6 +3,7 @@ import "./globals.css";
 import { Instagram, Youtube, Twitter, Mail, Linkedin, Facebook } from "lucide-react";
 import Link from "next/link";
 
+
 const siteUrl = "https://jessedanyusuf.com";
 
 export const metadata: Metadata = {

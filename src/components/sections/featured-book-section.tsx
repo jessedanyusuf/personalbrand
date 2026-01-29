@@ -1,15 +1,14 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
+import { Book3D } from "@/components/ui/3d-book";
+// import { Book3DReal } from "@/components/ui/book-3d-realistic";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { useTiltEffect } from "@/hooks/useTiltEffect";
 import { CountdownTimer } from "@/components/countdown-timer";
 import { featuredBookExtended } from "@/data/featured-book";
 
 export function FeaturedBookSection() {
   const featuredAnimation = useScrollAnimation({ threshold: 0.2 });
-  const bookTilt = useTiltEffect({ maxTilt: 20, scale: 1.08, speed: 300 });
 
   return (
     <section ref={featuredAnimation.ref} className="py-16 sm:py-20 md:py-32 bg-black relative overflow-hidden">
@@ -26,29 +25,17 @@ export function FeaturedBookSection() {
           <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
             {/* Left: Book Cover Image */}
             <div className={`animate-on-scroll ${featuredAnimation.isVisible ? 'visible animate-slide-left' : ''}`}>
-              <div className="relative">
+              <div className="relative flex justify-center">
                 {/* Subtle glow effect behind book */}
                 <div className="absolute inset-0 bg-white/10 blur-3xl scale-110 opacity-50"></div>
-                
-                {/* Book cover image with tilt effect */}
-                <div 
-                  ref={bookTilt.ref}
-                  style={bookTilt.style}
-                  {...bookTilt.handlers}
-                  className="relative rounded-2xl shadow-2xl aspect-[2/3] max-w-md mx-auto overflow-hidden cursor-pointer"
-                >
-                  {/* Book cover image */}
-                  <Image
-                    src="/images/Masterpiece Book Instagram Post.png"
-                    alt="Masterpiece Book Cover"
-                    fill
-                    className="object-cover"
-                    priority
-                  />
-                  
-                  {/* Subtle glassmorphism overlay for depth */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-black/20 pointer-events-none"></div>
-                </div>
+
+                <Book3D
+                  src="/images/masterpiece-cover.png"
+                  title="Masterpiece"
+                  author="Jesse Dan-Yusuf"
+                  width={350}
+                  height={525} // 2:3 aspect ratio (Approximate)
+                />
               </div>
             </div>
 
@@ -90,11 +77,14 @@ export function FeaturedBookSection() {
                 </ul>
 
                 {/* Countdown Timer */}
-                <div className="pt-6">
-                  <p className="text-sm text-gray-300 mb-4 text-center uppercase tracking-wider">
-                    Releases In
+                {/* Release Date */}
+                <div className="pt-6 text-center">
+                  <p className="text-sm text-gray-300 mb-2 uppercase tracking-wider">
+                    Release Date
                   </p>
-                  <CountdownTimer targetDate="2026-01-31T00:00:00" />
+                  <p className="text-2xl font-bold text-white tracking-widest uppercase">
+                    To Be Announced
+                  </p>
                 </div>
 
                 {/* CTA Button */}
