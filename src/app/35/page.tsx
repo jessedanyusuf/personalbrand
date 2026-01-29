@@ -1,5 +1,11 @@
 
 import React from 'react';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: "35 on the 31st",
+    description: "Jesse Dan-Yusuf's 35th Birthday Wishlist",
+};
 
 export default function BirthdayWishlistPage() {
     return (
