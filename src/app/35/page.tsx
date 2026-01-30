@@ -132,14 +132,14 @@ export default function BirthdayWishlistPage() {
                                         <TableCell><ExternalLink href="https://a.co/d/iMaSFQM">Amazon</ExternalLink></TableCell>
                                         <TableCell>₦72,500–₦101,500</TableCell>
                                         <TableCell>$50–$70</TableCell>
-                                        <TableCell>&nbsp;</TableCell>
+                                        <TableCell>✓</TableCell>
                                     </TableRow>
                                     <TableRow>
                                         <TableCell>The Hobbit</TableCell>
                                         <TableCell><ExternalLink href="https://a.co/d/iMaSFQM">Amazon</ExternalLink></TableCell>
                                         <TableCell>₦29,000–₦43,500</TableCell>
                                         <TableCell>$20–$30</TableCell>
-                                        <TableCell>&nbsp;</TableCell>
+                                        <TableCell>✓</TableCell>
                                     </TableRow>
                                 </TableBody>
                             </Table>
