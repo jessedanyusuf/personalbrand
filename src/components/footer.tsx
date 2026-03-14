@@ -93,7 +93,7 @@ export default function Footer() {
           {/* Copyright Section - Left */}
           <div className="flex items-center gap-3">
             <div className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-none">
-              ©2025
+              ©2026
             </div>
             <div className="text-white text-xs uppercase tracking-widest leading-tight">
               ALL RIGHTS<br />RESERVED.

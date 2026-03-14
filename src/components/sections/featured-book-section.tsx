@@ -1,10 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { Book3D } from "@/components/ui/3d-book";
-// import { Book3DReal } from "@/components/ui/book-3d-realistic";
+import Image from "next/image";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { CountdownTimer } from "@/components/countdown-timer";
 import { featuredBookExtended } from "@/data/featured-book";
 
 export function FeaturedBookSection() {
@@ -29,12 +27,12 @@ export function FeaturedBookSection() {
                 {/* Subtle glow effect behind book */}
                 <div className="absolute inset-0 bg-white/10 blur-3xl scale-110 opacity-50"></div>
 
-                <Book3D
-                  src="/images/masterpiece-cover.png"
-                  title="Masterpiece"
-                  author="Jesse Dan-Yusuf"
-                  width={350}
-                  height={525} // 2:3 aspect ratio (Approximate)
+                <Image
+                  src="/images/Masterpiece Book Instagram Post.png"
+                  alt="Masterpiece - Find Your Story In God's Story"
+                  width={500}
+                  height={500}
+                  className="relative z-10 rounded-lg"
                 />
               </div>
             </div>
@@ -83,7 +81,7 @@ export function FeaturedBookSection() {
                     Release Date
                   </p>
                   <p className="text-2xl font-bold text-white tracking-widest uppercase">
-                    To Be Announced
+                    Coming Soon
                   </p>
                 </div>
 
