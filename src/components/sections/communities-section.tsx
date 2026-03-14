@@ -57,7 +57,7 @@ export function CommunitiesSection() {
         <div className={`group bg-black rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-white/10 animate-on-scroll ${communitiesAnimation.isVisible ? 'visible animate-slide-up' : ''}`} style={{ animationDelay: '0.2s' }}>
           <div className="h-48 sm:h-56 md:h-64 relative bg-gray-900 overflow-hidden">
             <Image 
-              src="/images/campyfre.png" 
+              src="/images/campyfre.jpg" 
               alt="Campfyre Community" 
               fill
               className="object-cover object-center group-hover:scale-110 transition-transform duration-500"

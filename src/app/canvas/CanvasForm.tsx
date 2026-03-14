@@ -49,30 +49,35 @@ export default function CanvasForm() {
                     padding: 0 !important;
                 }
                 #mc_embed_signup h2 {
-                    color: #fff !important;
+                    color: #1a1a1a !important;
                     font-weight: 700;
                     margin-bottom: 0.5rem;
                 }
                 #mc_embed_signup .indicates-required {
-                    color: rgba(255,255,255,0.5) !important;
+                    color: #888 !important;
                 }
                 #mc_embed_signup label {
-                    color: rgba(255,255,255,0.8) !important;
+                    color: #333 !important;
                 }
                 #mc_embed_signup input.text,
                 #mc_embed_signup input.email {
-                    background: rgba(255,255,255,0.1) !important;
-                    border: 1px solid rgba(255,255,255,0.2) !important;
-                    color: #fff !important;
+                    background: #fff !important;
+                    border: 1px solid #d1c9be !important;
+                    color: #1a1a1a !important;
                     border-radius: 8px !important;
+                }
+                #mc_embed_signup input.text:focus,
+                #mc_embed_signup input.email:focus {
+                    border-color: #555 !important;
+                    outline: none !important;
                 }
                 #mc_embed_signup input.text::placeholder,
                 #mc_embed_signup input.email::placeholder {
-                    color: rgba(255,255,255,0.4) !important;
+                    color: #aaa !important;
                 }
                 #mc_embed_signup .button {
-                    background-color: #fff !important;
-                    color: #000 !important;
+                    background-color: #1a1a1a !important;
+                    color: #f5f0eb !important;
                     border-radius: 9999px !important;
                     font-weight: 600 !important;
                     padding: 12px 32px !important;
@@ -81,10 +86,10 @@ export default function CanvasForm() {
                     transition: background-color 0.2s !important;
                 }
                 #mc_embed_signup .button:hover {
-                    background-color: #e5e5e5 !important;
+                    background-color: #333 !important;
                 }
                 #mc_embed_signup .asterisk {
-                    color: rgba(255,255,255,0.5) !important;
+                    color: #999 !important;
                 }
                 #mc_embed_signup .mc-field-group {
                     padding-bottom: 12px !important;

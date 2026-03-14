@@ -12,7 +12,7 @@ export default function BookDemoPage() {
 
             <div className="flex gap-20 flex-wrap justify-center items-center">
                 <Book3D
-                    src="/images/Masterpiece Book Instagram Post.png"
+                    src="/images/Masterpiece Book Instagram Post.jpg"
                     title="Masterpiece Book"
                     width={350}
                     height={400} // Instagram post is likely square or 4:5, adjusting height to match roughly, or we might need to object-fit: cover
