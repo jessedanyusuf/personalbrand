@@ -12,7 +12,7 @@ const CommunitiesSection = dynamic(() => import("@/components/sections/communiti
 const MyStorySection = dynamic(() => import("@/components/sections/my-story-section").then(mod => ({ default: mod.MyStorySection })), { ssr: false });
 const NewsletterSection = dynamic(() => import("@/components/sections/newsletter-section").then(mod => ({ default: mod.NewsletterSection })), { ssr: false });
 const MasterClassSection = dynamic(() => import("@/components/sections/masterclass-section").then(mod => ({ default: mod.MasterClassSection })), { ssr: false });
-const ShopSection = dynamic(() => import("@/components/sections/shop-section").then(mod => ({ default: mod.ShopSection })), { ssr: false });
+
 
 export default function Home() {
   return (
@@ -26,7 +26,6 @@ export default function Home() {
       <MyStorySection />
       <NewsletterSection />
       <MasterClassSection />
-      <ShopSection />
       <Footer />
     </div>
   );
