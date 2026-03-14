@@ -28,11 +28,11 @@ export function FeaturedBookSection() {
                 <div className="absolute inset-0 bg-white/10 blur-3xl scale-110 opacity-50"></div>
 
                 <Image
-                  src="/images/Masterpiece Book Instagram Post.jpg"
+                  src="/images/Masterpiece Book Instagram Post.png"
                   alt="Masterpiece - Find Your Story In God's Story"
                   width={500}
                   height={500}
-                  className="relative z-10 rounded-lg"
+                  className="relative z-10"
                 />
               </div>
             </div>
