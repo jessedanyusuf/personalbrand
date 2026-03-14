@@ -50,7 +50,7 @@ export default function CanvasNav() {
 
     return (
         <>
-            <nav className="w-full px-4 sm:px-6 py-5 flex justify-between items-center max-w-7xl mx-auto">
+            <nav className="absolute top-0 left-0 right-0 z-40 w-full px-4 sm:px-6 py-5 flex justify-between items-center max-w-7xl mx-auto">
                 {/* Logo */}
                 <Link href="/" className="text-gray-900 font-semibold hover:text-gray-600 transition-colors">
                     Jesse Dan-Yusuf
@@ -101,22 +101,10 @@ export default function CanvasNav() {
                             )}
                         </div>
                     ))}
-                    <Link
-                        href="#register"
-                        className="text-sm font-semibold bg-gray-900 text-[#f5f0eb] px-4 py-2 rounded-full hover:bg-gray-700 transition-colors"
-                    >
-                        Register
-                    </Link>
                 </div>
 
                 {/* Mobile Hamburger */}
                 <div className="md:hidden flex items-center gap-3">
-                    <Link
-                        href="#register"
-                        className="text-xs font-semibold bg-gray-900 text-[#f5f0eb] px-3 py-1.5 rounded-full hover:bg-gray-700 transition-colors"
-                    >
-                        Register
-                    </Link>
                     <button
                         onClick={() => setMobileOpen(true)}
                         className="p-2"
