@@ -157,26 +157,16 @@ export default function CanvasPage() {
             {/* ── Dark Footer Section ── */}
             <div className="bg-black text-white">
                 <div className="max-w-2xl mx-auto px-6 py-16 md:py-24">
-                    <div className="text-center">
-                        <p className="text-white/40 text-sm uppercase tracking-widest mb-2">From the desk of Jesse Dan-Yusuf</p>
-                        <h3 className="text-2xl sm:text-3xl font-bold mb-3">Masterpiece</h3>
-                        <p className="text-white/50 mb-8 max-w-md mx-auto">
-                            Weekly insights on purpose, creativity, and building meaningful work.
-                        </p>
-                        <div className="flex justify-center">
-                            <iframe
-                                src="https://readmasterpiece.substack.com/embed"
-                                width="480"
-                                height="320"
-                                style={{ border: '1px solid rgba(255,255,255,0.1)', background: 'white' }}
-                                frameBorder="0"
-                                scrolling="no"
-                                className="max-w-full rounded-lg"
-                            />
-                        </div>
-                        <p className="text-sm text-white/30 mt-6">
-                            No spam, ever. Unsubscribe anytime.
-                        </p>
+                    <div className="flex justify-center">
+                        <iframe
+                            src="https://readmasterpiece.substack.com/embed"
+                            width="480"
+                            height="320"
+                            style={{ border: '1px solid rgba(255,255,255,0.1)', background: 'white' }}
+                            frameBorder="0"
+                            scrolling="no"
+                            className="max-w-full rounded-lg"
+                        />
                     </div>
 
                     {/* Minimal Footer */}
