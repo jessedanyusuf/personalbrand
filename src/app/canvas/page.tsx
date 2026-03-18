@@ -1,8 +1,18 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import localFont from 'next/font/local';
 import CanvasForm from './CanvasForm';
 import CanvasNav from './CanvasNav';
+
+const awesomeSerif = localFont({
+    src: [
+        { path: '../../../public/fonts/AwesomeSerif-VF.ttf', style: 'normal' },
+        { path: '../../../public/fonts/AwesomeSerifItalic-VF.ttf', style: 'italic' },
+    ],
+    display: 'swap',
+    variable: '--font-awesome-serif',
+});
 
 export const metadata: Metadata = {
     title: {
@@ -54,7 +64,7 @@ function DownloadCard({ src, downloadSrc, alt, index }: { src: string; downloadS
 
 export default function CanvasPage() {
     return (
-        <div className="min-h-screen">
+        <div className={`min-h-screen ${awesomeSerif.className}`}>
             <style>{`
                 @keyframes canvasReveal {
                     from {
