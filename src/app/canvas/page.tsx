@@ -65,45 +65,6 @@ function DownloadCard({ src, downloadSrc, alt, index }: { src: string; downloadS
 export default function CanvasPage() {
     return (
         <div className={`min-h-screen ${awesomeSerif.className}`}>
-            <style>{`
-                @keyframes canvasReveal {
-                    from {
-                        opacity: 0;
-                        transform: translateY(20px);
-                    }
-                    to {
-                        opacity: 1;
-                        transform: translateY(0);
-                    }
-                }
-                @keyframes canvasFade {
-                    from { opacity: 0; }
-                    to { opacity: 1; }
-                }
-                @keyframes subtlePulse {
-                    0%, 100% { opacity: 0.4; }
-                    50% { opacity: 0.7; }
-                }
-                .canvas-reveal {
-                    animation: canvasReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
-                }
-                .canvas-fade {
-                    animation: canvasFade 0.6s ease-out both;
-                }
-                .canvas-divider {
-                    position: relative;
-                }
-                .canvas-divider::before {
-                    content: '';
-                    position: absolute;
-                    left: 0;
-                    top: 0;
-                    bottom: 0;
-                    width: 2px;
-                    background: linear-gradient(to bottom, transparent, #9ca3af, transparent);
-                }
-            `}</style>
-
             {/* ── Light Section ── */}
             <div className="bg-[#f5f0eb]">
                 {/* Navigation */}
