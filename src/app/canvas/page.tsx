@@ -1,18 +1,9 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import localFont from 'next/font/local';
+import Link from 'next/link';
 import CanvasForm from './CanvasForm';
 import CanvasNav from './CanvasNav';
-
-const awesomeSerif = localFont({
-    src: [
-        { path: '../../../public/fonts/AwesomeSerif-VF.ttf', style: 'normal' },
-        { path: '../../../public/fonts/AwesomeSerifItalic-VF.ttf', style: 'italic' },
-    ],
-    display: 'swap',
-    variable: '--font-awesome-serif',
-});
 
 export const metadata: Metadata = {
     title: {
@@ -64,7 +55,7 @@ function DownloadCard({ src, downloadSrc, alt, index }: { src: string; downloadS
 
 export default function CanvasPage() {
     return (
-        <div className={`min-h-screen ${awesomeSerif.className}`}>
+        <div className="min-h-screen" style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>
             {/* ── Light Section ── */}
             <div className="bg-[#fafafa]">
                 {/* Navigation */}
@@ -126,16 +117,28 @@ export default function CanvasPage() {
                     {/* Watch Live */}
                     <div className="mt-20 sm:mt-24 canvas-reveal" style={{ animationDelay: '1350ms' }}>
                         <p className="text-gray-400 text-sm uppercase tracking-widest mb-4">Watch live</p>
-                        <div className="relative w-full overflow-hidden rounded-lg" style={{ paddingBottom: '56.25%' }}>
-                            <iframe
-                                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                                title="CANVAS Livestream"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowFullScreen
-                                className="absolute inset-0 w-full h-full"
-                                style={{ border: 'none' }}
+                        <Link
+                            href="https://www.instagram.com/jessedanyusuff/live"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="group block relative overflow-hidden rounded-lg"
+                        >
+                            <Image
+                                src="/images/Header.jpg"
+                                alt="Watch CANVAS Live"
+                                width={1920}
+                                height={1080}
+                                className="w-full h-auto transition-transform duration-700 ease-out group-hover:scale-[1.02]"
                             />
-                        </div>
+                            <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-all duration-500 flex items-center justify-center">
+                                {/* Play button */}
+                                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                    <svg className="w-7 h-7 sm:w-8 sm:h-8 text-gray-900 ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M8 5v14l11-7z" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </Link>
                     </div>
                 </div>
             </div>
