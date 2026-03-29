@@ -115,7 +115,7 @@ export default function CanvasPage() {
                         {/* Guest Speaker */}
                         <div className="canvas-reveal overflow-hidden rounded-lg" style={{ animationDelay: '800ms' }}>
                             <Image
-                                src="/images/Big H.png"
+                                src="/images/big-h.png"
                                 alt="Guest Speaker — Henry Nwaeze, Big H Studios"
                                 width={800}
                                 height={800}
