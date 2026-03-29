@@ -1,8 +1,11 @@
 'use client';
 
 import { useEffect } from 'react';
+import { useCanvasTheme } from './CanvasWrapper';
 
 export default function CanvasForm() {
+    const { theme } = useCanvasTheme();
+    const dark = theme === 'dark';
     useEffect(() => {
         const script = document.createElement('script');
         script.src = '//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js';
@@ -49,26 +52,26 @@ export default function CanvasForm() {
                     padding: 0 !important;
                 }
                 #mc_embed_signup h2 {
-                    color: #1a1a1a !important;
+                    color: ${dark ? '#fff' : '#1a1a1a'} !important;
                     font-weight: 700;
                     margin-bottom: 0.5rem;
                 }
                 #mc_embed_signup .indicates-required {
-                    color: #888 !important;
+                    color: ${dark ? 'rgba(255,255,255,0.4)' : '#888'} !important;
                 }
                 #mc_embed_signup label {
-                    color: #333 !important;
+                    color: ${dark ? 'rgba(255,255,255,0.7)' : '#333'} !important;
                 }
                 #mc_embed_signup input.text,
                 #mc_embed_signup input.email {
-                    background: #fff !important;
-                    border: 1px solid #d1c9be !important;
-                    color: #1a1a1a !important;
+                    background: ${dark ? 'rgba(255,255,255,0.1)' : '#fff'} !important;
+                    border: 1px solid ${dark ? 'rgba(255,255,255,0.2)' : '#d1c9be'} !important;
+                    color: ${dark ? '#fff' : '#1a1a1a'} !important;
                     border-radius: 8px !important;
                 }
                 #mc_embed_signup input.text:focus,
                 #mc_embed_signup input.email:focus {
-                    border-color: #555 !important;
+                    border-color: ${dark ? 'rgba(255,255,255,0.5)' : '#555'} !important;
                     outline: none !important;
                 }
                 #mc_embed_signup input.text::placeholder,
@@ -76,8 +79,8 @@ export default function CanvasForm() {
                     color: #aaa !important;
                 }
                 #mc_embed_signup .button {
-                    background-color: #1a1a1a !important;
-                    color: #f5f0eb !important;
+                    background-color: ${dark ? '#fff' : '#1a1a1a'} !important;
+                    color: ${dark ? '#111' : '#f5f0eb'} !important;
                     border-radius: 9999px !important;
                     font-weight: 600 !important;
                     padding: 12px 32px !important;
@@ -86,7 +89,7 @@ export default function CanvasForm() {
                     transition: background-color 0.2s !important;
                 }
                 #mc_embed_signup .button:hover {
-                    background-color: #333 !important;
+                    background-color: ${dark ? '#e5e5e5' : '#333'} !important;
                 }
                 #mc_embed_signup .asterisk {
                     color: #999 !important;

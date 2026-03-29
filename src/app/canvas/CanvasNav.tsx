@@ -2,14 +2,17 @@
 
 import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, ChevronDown, X, Instagram, Twitter, Youtube, Linkedin } from 'lucide-react';
+import { Menu, ChevronDown, X, Instagram, Twitter, Youtube, Linkedin, Sun, Moon } from 'lucide-react';
 import { menuItems } from '@/data/menu-items';
+import { useCanvasTheme } from './CanvasWrapper';
 
 export default function CanvasNav() {
+    const { theme, toggle } = useCanvasTheme();
     const [hoveredMenu, setHoveredMenu] = useState<string | null>(null);
     const [mobileOpen, setMobileOpen] = useState(false);
     const [openSections, setOpenSections] = useState<Record<string, boolean>>({});
     const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+    const dark = theme === 'dark';
 
     const handleMouseEnter = (label: string) => {
         if (timeoutRef.current) clearTimeout(timeoutRef.current);
@@ -52,7 +55,7 @@ export default function CanvasNav() {
         <>
             <nav className="absolute top-0 left-0 right-0 z-40 w-full px-4 sm:px-6 py-5 flex justify-between items-center max-w-7xl mx-auto">
                 {/* Logo */}
-                <Link href="/" className="text-gray-900 font-semibold hover:text-gray-600 transition-colors">
+                <Link href="/" className={`font-semibold transition-colors ${dark ? 'text-white hover:text-white/70' : 'text-gray-900 hover:text-gray-600'}`}>
                     Jesse Dan-Yusuf
                 </Link>
 
@@ -68,12 +71,12 @@ export default function CanvasNav() {
                             {item.href ? (
                                 <Link
                                     href={item.href}
-                                    className="text-sm text-gray-600 hover:text-gray-900 transition-colors py-2"
+                                    className={`text-sm transition-colors py-2 ${dark ? 'text-white/60 hover:text-white' : 'text-gray-600 hover:text-gray-900'}`}
                                 >
                                     {item.label}
                                 </Link>
                             ) : (
-                                <button className="text-sm text-gray-600 hover:text-gray-900 transition-colors py-2">
+                                <button className={`text-sm transition-colors py-2 ${dark ? 'text-white/60 hover:text-white' : 'text-gray-600 hover:text-gray-900'}`}>
                                     {item.label}
                                 </button>
                             )}
@@ -83,13 +86,13 @@ export default function CanvasNav() {
                                     onMouseEnter={() => handleMouseEnter(item.label)}
                                     onMouseLeave={handleMouseLeave}
                                 >
-                                    <div className="bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden min-w-[200px]">
+                                    <div className={`rounded-xl shadow-lg overflow-hidden min-w-[200px] border ${dark ? 'bg-[#222] border-white/10' : 'bg-white border-gray-200'}`}>
                                         <ul className="py-2">
                                             {item.items.map((sub) => (
                                                 <li key={sub.label}>
                                                     <Link
                                                         href={sub.href}
-                                                        className="block px-4 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-colors"
+                                                        className={`block px-4 py-2 text-sm transition-colors ${dark ? 'text-white/60 hover:text-white hover:bg-white/5' : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'}`}
                                                     >
                                                         {sub.label}
                                                     </Link>
@@ -101,16 +104,31 @@ export default function CanvasNav() {
                             )}
                         </div>
                     ))}
+                    {/* Dark mode toggle */}
+                    <button
+                        onClick={toggle}
+                        className={`p-2 rounded-full transition-colors ${dark ? 'text-white/60 hover:text-white hover:bg-white/10' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100'}`}
+                        aria-label="Toggle dark mode"
+                    >
+                        {dark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+                    </button>
                 </div>
 
-                {/* Mobile Hamburger */}
-                <div className="md:hidden flex items-center gap-3">
+                {/* Mobile */}
+                <div className="md:hidden flex items-center gap-2">
+                    <button
+                        onClick={toggle}
+                        className={`p-2 rounded-full transition-colors ${dark ? 'text-white/60 hover:text-white' : 'text-gray-500 hover:text-gray-900'}`}
+                        aria-label="Toggle dark mode"
+                    >
+                        {dark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+                    </button>
                     <button
                         onClick={() => setMobileOpen(true)}
                         className="p-2"
                         aria-label="Open menu"
                     >
-                        <Menu className="h-6 w-6 text-gray-900" />
+                        <Menu className={`h-6 w-6 ${dark ? 'text-white' : 'text-gray-900'}`} />
                     </button>
                 </div>
             </nav>
