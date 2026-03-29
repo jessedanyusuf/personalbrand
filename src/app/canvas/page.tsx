@@ -63,16 +63,33 @@ export default function CanvasPage() {
                     <CanvasNav />
                 </div>
 
-                {/* Header Image */}
-                <div className="w-full canvas-fade" style={{ animationDelay: '200ms' }}>
-                    <Image
-                        src="/images/Header.jpg"
-                        alt="CANVAS"
-                        width={1920}
-                        height={1080}
-                        className="w-full h-auto"
-                        priority
-                    />
+                {/* Watch Live */}
+                <div className="w-full canvas-fade relative" style={{ animationDelay: '150ms' }}>
+                    <Link
+                        href="https://www.youtube.com/@jessedanyusuf/live"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group block relative"
+                    >
+                        <Image
+                            src="/images/Header.jpg"
+                            alt="Watch CANVAS Live"
+                            width={1920}
+                            height={1080}
+                            className="w-full h-auto transition-transform duration-700 ease-out group-hover:scale-[1.01]"
+                            priority
+                        />
+                        <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all duration-500 flex items-center justify-center">
+                            <div className="flex flex-col items-center gap-3">
+                                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                    <svg className="w-7 h-7 sm:w-8 sm:h-8 text-gray-900 ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M8 5v14l11-7z" />
+                                    </svg>
+                                </div>
+                                <span className="text-white text-sm sm:text-base font-medium uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-300">Watch Live</span>
+                            </div>
+                        </div>
+                    </Link>
                 </div>
 
                 {/* Content */}
@@ -114,32 +131,6 @@ export default function CanvasPage() {
                         </div>
                     </div>
 
-                    {/* Watch Live */}
-                    <div className="mt-20 sm:mt-24 canvas-reveal" style={{ animationDelay: '1350ms' }}>
-                        <p className="text-gray-400 text-sm uppercase tracking-widest mb-4">Watch live</p>
-                        <Link
-                            href="https://www.youtube.com/@jessedanyusuf/live"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="group block relative overflow-hidden rounded-lg"
-                        >
-                            <Image
-                                src="/images/Header.jpg"
-                                alt="Watch CANVAS Live"
-                                width={1920}
-                                height={1080}
-                                className="w-full h-auto transition-transform duration-700 ease-out group-hover:scale-[1.02]"
-                            />
-                            <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-all duration-500 flex items-center justify-center">
-                                {/* Play button */}
-                                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                                    <svg className="w-7 h-7 sm:w-8 sm:h-8 text-gray-900 ml-1" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M8 5v14l11-7z" />
-                                    </svg>
-                                </div>
-                            </div>
-                        </Link>
-                    </div>
                 </div>
             </div>
 
