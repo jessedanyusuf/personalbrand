@@ -112,6 +112,17 @@ export default function CanvasPage() {
                             <p className="text-gray-500">Doors open at 5:30PM</p>
                         </div>
 
+                        {/* Guest Speaker */}
+                        <div className="canvas-reveal overflow-hidden rounded-lg" style={{ animationDelay: '800ms' }}>
+                            <Image
+                                src="/images/Big H.png"
+                                alt="Guest Speaker — Henry Nwaeze, Big H Studios"
+                                width={800}
+                                height={800}
+                                className="w-full h-auto"
+                            />
+                        </div>
+
                         <p className="canvas-reveal" style={{ animationDelay: '900ms' }}>
                             If you are a creative who is also trying to follow Jesus, this room is for you. Come and bring someone who needs it as much as you do.
                         </p>
@@ -124,10 +135,11 @@ export default function CanvasPage() {
                     {/* Share / Download Images */}
                     <div className="mt-20 sm:mt-24 space-y-4">
                         <p className="text-gray-400 text-sm uppercase tracking-widest canvas-reveal" style={{ animationDelay: '1200ms' }}>Share the word</p>
-                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <DownloadCard src="/images/c1.jpg" downloadSrc="/images/c1.png" alt="CANVAS share image 1" index={1} />
                             <DownloadCard src="/images/c2.jpg" downloadSrc="/images/c2.png" alt="CANVAS share image 2" index={2} />
                             <DownloadCard src="/images/C4.jpg" downloadSrc="/images/C4.png" alt="CANVAS share image 3" index={3} />
+                            <DownloadCard src="/images/c5.png" downloadSrc="/images/c5.png" alt="CANVAS speakers" index={4} />
                         </div>
                     </div>
 
