@@ -72,7 +72,7 @@ export default function CanvasPage() {
                         className="group block relative"
                     >
                         <Image
-                            src="/images/Header.jpg"
+                            src="/images/c5.png"
                             alt="Watch CANVAS Live"
                             width={1920}
                             height={1080}
@@ -112,18 +112,7 @@ export default function CanvasPage() {
                             <p className="text-gray-500">Doors open at 5:30PM</p>
                         </div>
 
-                        {/* Guest Speaker */}
-                        <div className="canvas-reveal overflow-hidden rounded-lg" style={{ animationDelay: '800ms' }}>
-                            <Image
-                                src="/images/big-h.png"
-                                alt="Guest Speaker — Henry Nwaeze, Big H Studios"
-                                width={800}
-                                height={800}
-                                className="w-full h-auto"
-                            />
-                        </div>
-
-                        <p className="canvas-reveal" style={{ animationDelay: '900ms' }}>
+                        <p className="canvas-reveal" style={{ animationDelay: '800ms' }}>
                             If you are a creative who is also trying to follow Jesus, this room is for you. Come and bring someone who needs it as much as you do.
                         </p>
 
@@ -139,7 +128,7 @@ export default function CanvasPage() {
                             <DownloadCard src="/images/c1.jpg" downloadSrc="/images/c1.png" alt="CANVAS share image 1" index={1} />
                             <DownloadCard src="/images/c2.jpg" downloadSrc="/images/c2.png" alt="CANVAS share image 2" index={2} />
                             <DownloadCard src="/images/C4.jpg" downloadSrc="/images/C4.png" alt="CANVAS share image 3" index={3} />
-                            <DownloadCard src="/images/c5.png" downloadSrc="/images/c5.png" alt="CANVAS speakers" index={4} />
+                            <DownloadCard src="/images/big-h.png" downloadSrc="/images/big-h.png" alt="Guest Speaker — Henry Nwaeze" index={4} />
                         </div>
                     </div>
 
