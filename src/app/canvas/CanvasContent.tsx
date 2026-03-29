@@ -43,32 +43,34 @@ function CanvasInner() {
                 <CanvasNav />
             </div>
 
+            {/* Hero Image */}
+            <div className="w-full canvas-fade" style={{ animationDelay: '150ms' }}>
+                <Image
+                    src="/images/Header.jpg"
+                    alt="CANVAS"
+                    width={1920}
+                    height={1080}
+                    className="w-full h-auto"
+                    priority
+                />
+            </div>
+
             {/* Watch Live */}
-            <div className="w-full canvas-fade relative" style={{ animationDelay: '150ms' }}>
+            <div className="canvas-fade" style={{ animationDelay: '250ms' }}>
                 <Link
                     href="https://www.youtube.com/@jessedanyusuf/live"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group block relative"
+                    className={`group flex items-center justify-center gap-3 py-4 transition-colors duration-300 ${dark ? 'bg-white/5 hover:bg-white/10' : 'bg-gray-100 hover:bg-gray-200'}`}
                 >
-                    <Image
-                        src="/images/Header.jpg"
-                        alt="Watch CANVAS Live"
-                        width={1920}
-                        height={1080}
-                        className="w-full h-auto transition-transform duration-700 ease-out group-hover:scale-[1.01]"
-                        priority
-                    />
-                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all duration-500 flex items-center justify-center">
-                        <div className="flex flex-col items-center gap-3">
-                            <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                                <svg className="w-7 h-7 sm:w-8 sm:h-8 text-gray-900 ml-1" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M8 5v14l11-7z" />
-                                </svg>
-                            </div>
-                            <span className="text-white text-sm sm:text-base font-medium uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-300">Watch Live</span>
-                        </div>
+                    <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-transform duration-300 group-hover:scale-110 ${dark ? 'bg-white/20' : 'bg-gray-900'}`}>
+                        <svg className={`w-3.5 h-3.5 ml-0.5 ${dark ? 'text-white' : 'text-white'}`} fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z" />
+                        </svg>
                     </div>
+                    <span className={`text-sm font-medium uppercase tracking-widest ${dark ? 'text-white/60 group-hover:text-white' : 'text-gray-500 group-hover:text-gray-900'} transition-colors duration-300`}>
+                        Watch Live
+                    </span>
                 </Link>
             </div>
 
