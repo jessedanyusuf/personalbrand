@@ -118,7 +118,7 @@ export default function CanvasPage() {
                     <div className="mt-20 sm:mt-24 canvas-reveal" style={{ animationDelay: '1350ms' }}>
                         <p className="text-gray-400 text-sm uppercase tracking-widest mb-4">Watch live</p>
                         <Link
-                            href="https://www.instagram.com/jessedanyusuff/live"
+                            href="https://www.youtube.com/@jessedanyusuf/live"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="group block relative overflow-hidden rounded-lg"
