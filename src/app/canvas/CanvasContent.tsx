@@ -103,16 +103,19 @@ function CanvasInner() {
                     </div>
                 </div>
 
-                {/* Share / Download Images */}
+                {/* Share / Download Images — Carousel */}
                 <div className="mt-20 sm:mt-24 space-y-4">
                     <p className={`text-sm uppercase tracking-widest canvas-reveal transition-colors duration-500 ${dark ? 'text-white/30' : 'text-gray-400'}`} style={{ animationDelay: '1200ms' }}>Share the word</p>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <DownloadCard src="/images/c1.jpg" downloadSrc="/images/c1.png" alt="CANVAS share image 1" index={1} />
-                        <DownloadCard src="/images/c2.jpg" downloadSrc="/images/c2.png" alt="CANVAS share image 2" index={2} />
-                        <DownloadCard src="/images/C4.jpg" downloadSrc="/images/C4.png" alt="CANVAS share image 3" index={3} />
-                        <DownloadCard src="/images/big-h.png" downloadSrc="/images/big-h.png" alt="Guest Speaker — Henry Nwaeze" index={4} />
-                        <DownloadCard src="/images/c5.png" downloadSrc="/images/c5.png" alt="CANVAS speakers" index={5} />
-                    </div>
+                </div>
+            </div>
+            <div className="canvas-reveal overflow-hidden" style={{ animationDelay: '1300ms' }}>
+                <div className="flex gap-4 overflow-x-auto pb-4 px-6 snap-x snap-mandatory scrollbar-hide" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+                    <style>{`.scrollbar-hide::-webkit-scrollbar { display: none; }`}</style>
+                    <div className="flex-shrink-0 w-[280px] sm:w-[320px] snap-start"><DownloadCard src="/images/c1.jpg" downloadSrc="/images/c1.png" alt="CANVAS share image 1" index={1} /></div>
+                    <div className="flex-shrink-0 w-[280px] sm:w-[320px] snap-start"><DownloadCard src="/images/c2.jpg" downloadSrc="/images/c2.png" alt="CANVAS share image 2" index={2} /></div>
+                    <div className="flex-shrink-0 w-[280px] sm:w-[320px] snap-start"><DownloadCard src="/images/C4.jpg" downloadSrc="/images/C4.png" alt="CANVAS share image 3" index={3} /></div>
+                    <div className="flex-shrink-0 w-[280px] sm:w-[320px] snap-start"><DownloadCard src="/images/big-h.png" downloadSrc="/images/big-h.png" alt="Guest Speaker — Henry Nwaeze" index={4} /></div>
+                    <div className="flex-shrink-0 w-[280px] sm:w-[320px] snap-start"><DownloadCard src="/images/c5.png" downloadSrc="/images/c5.png" alt="CANVAS speakers" index={5} /></div>
                 </div>
             </div>
 
