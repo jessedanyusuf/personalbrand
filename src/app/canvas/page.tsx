@@ -66,7 +66,7 @@ export default function CanvasPage() {
     return (
         <div className={`min-h-screen ${awesomeSerif.className}`}>
             {/* ── Light Section ── */}
-            <div className="bg-[#f5f0eb]">
+            <div className="bg-[#fafafa]">
                 {/* Navigation */}
                 <div className="canvas-fade" style={{ animationDelay: '100ms' }}>
                     <CanvasNav />
@@ -120,6 +120,21 @@ export default function CanvasPage() {
                             <DownloadCard src="/images/c1.jpg" downloadSrc="/images/c1.png" alt="CANVAS share image 1" index={1} />
                             <DownloadCard src="/images/c2.jpg" downloadSrc="/images/c2.png" alt="CANVAS share image 2" index={2} />
                             <DownloadCard src="/images/C4.jpg" downloadSrc="/images/C4.png" alt="CANVAS share image 3" index={3} />
+                        </div>
+                    </div>
+
+                    {/* Watch Live */}
+                    <div className="mt-20 sm:mt-24 canvas-reveal" style={{ animationDelay: '1350ms' }}>
+                        <p className="text-gray-400 text-sm uppercase tracking-widest mb-4">Watch live</p>
+                        <div className="relative w-full overflow-hidden rounded-lg" style={{ paddingBottom: '56.25%' }}>
+                            <iframe
+                                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                                title="CANVAS Livestream"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                                className="absolute inset-0 w-full h-full"
+                                style={{ border: 'none' }}
+                            />
                         </div>
                     </div>
                 </div>
