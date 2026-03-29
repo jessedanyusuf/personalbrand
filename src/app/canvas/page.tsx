@@ -92,6 +92,17 @@ export default function CanvasPage() {
                     </Link>
                 </div>
 
+                {/* Speakers Image */}
+                <div className="w-full canvas-fade" style={{ animationDelay: '250ms' }}>
+                    <Image
+                        src="/images/c5.png"
+                        alt="CANVAS — Jesse Dan-Yusuf (Facilitator) & Henry Nwaeze (Guest)"
+                        width={1920}
+                        height={1920}
+                        className="w-full h-auto"
+                    />
+                </div>
+
                 {/* Content */}
                 <div className="max-w-2xl mx-auto px-6 py-16 md:py-24">
                     <div className="space-y-8 text-gray-700 text-lg leading-relaxed">
