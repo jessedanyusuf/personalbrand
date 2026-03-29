@@ -72,7 +72,7 @@ export default function CanvasPage() {
                         className="group block relative"
                     >
                         <Image
-                            src="/images/c5.png"
+                            src="/images/Header.jpg"
                             alt="Watch CANVAS Live"
                             width={1920}
                             height={1080}
