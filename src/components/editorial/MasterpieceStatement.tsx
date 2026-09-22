@@ -15,18 +15,23 @@ export function MasterpieceStatement() {
     <section id="masterpiece" ref={ref} className="relative py-24 md:py-40 overflow-hidden">
       <div className="container-x">
         <Reveal>
-          <p className="label text-center mb-8 md:mb-12">The idea beneath everything</p>
+          <h2 className="statement text-center max-w-[18ch] mx-auto">
+            I help people find their story in <span className="accent">God&apos;s story.</span>
+          </h2>
+        </Reveal>
+        <Reveal delay={0.1}>
+          <p className="label text-center mt-24 md:mt-40 mb-8 md:mb-12">Becoming God&apos;s</p>
         </Reveal>
       </div>
 
-      <m.h2 className="display-giant text-center" style={reduce ? undefined : { x }}>
+      <m.p className="display-giant text-center" style={reduce ? undefined : { x }}>
         MASTERPIECE
-      </m.h2>
+      </m.p>
 
       <div className="container-x">
         <Reveal delay={0.1}>
           <p className="statement text-center max-w-[24ch] mx-auto mt-16 md:mt-28">
-            Your life is God&apos;s workmanship. You were made <span className="accent">on purpose, for a purpose,</span> and invited to
+            Your life is God&apos;s masterpiece. You were made <span className="accent">on purpose, for a purpose,</span> and invited to
             spend your life doing the good work God prepared for you.
           </p>
         </Reveal>
@@ -35,11 +40,10 @@ export function MasterpieceStatement() {
         <div className="grid grid-cols-12 gap-x-6 gap-y-8 mt-24 md:mt-40 items-start">
           <Reveal className="col-span-12 md:col-span-3">
             <p className="micro">Ephesians 2:10</p>
-            <p className="micro mt-1">English Standard Version</p>
           </Reveal>
           <Reveal className="col-span-12 md:col-span-6" delay={0.1}>
             <blockquote className="display-md text-center md:text-left">
-              &ldquo;For we are his <span className="accent">workmanship,</span> created in Christ Jesus for good works, which God prepared
+              &ldquo;For we are his <span className="accent">masterpiece,</span> created in Christ Jesus for good works, which God prepared
               beforehand, that we should walk in them.&rdquo;
             </blockquote>
           </Reveal>

@@ -13,8 +13,8 @@ export function Newsletter() {
           <div className="relative max-w-3xl">
             <Reveal>
               <p className="label mb-6 md:mb-8">The Masterpiece newsletter</p>
-              <h2 className="display-xl max-w-[12ch]">
-                Find your story in <span className="accent">God&apos;s story.</span>
+              <h2 className="display-xl max-w-[16ch]">
+                Finding your story in the <span className="accent">greatest story ever told.</span>
               </h2>
               <p className="lede max-w-xl mt-8 md:mt-10">
                 Masterpiece is my ongoing letter about faith, creativity, calling and becoming who God made you to be.

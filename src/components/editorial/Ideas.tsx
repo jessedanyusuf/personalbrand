@@ -13,7 +13,6 @@ interface Step {
   icon: LucideIcon;
   title: ReactNode;
   text: string;
-  items: string[];
   links: { label: string; href: string }[];
   visual: { src: string; position: string; alt: string };
 }
@@ -25,11 +24,10 @@ const steps: Step[] = [
     icon: BookOpen,
     title: (
       <>
-        Letters <span className="accent">&amp; essays.</span>
+        Read my <span className="accent">newsletter.</span>
       </>
     ),
-    text: "Masterpiece is where I write most honestly: about faith, creativity, calling and the slow work of becoming.",
-    items: ["Masterpiece newsletter", "Essays"],
+    text: "Notes on God, calling, creativity and making something meaningful with the life you\u2019ve been given.",
     links: [{ label: "Read Masterpiece", href: links.masterpiece }],
     visual: { src: "/images/jesse-portrait-bw.jpg", position: "50% 25%", alt: "Jesse Dan-Yusuf" },
   },
@@ -39,15 +37,11 @@ const steps: Step[] = [
     icon: Headphones,
     title: (
       <>
-        Sermons <span className="accent">&amp; conversations.</span>
+        Listen to my <span className="accent">podcast.</span>
       </>
     ),
     text: "Teaching from One City, and long conversations with creatives and builders about the life God is inviting us into.",
-    items: ["The Cave podcast", "One City sermons", "Campfyre conversations"],
-    links: [
-      { label: "The Cave", href: links.theCavePodcast },
-      { label: "One City", href: links.oneCityPodcast },
-    ],
+    links: [{ label: "Listen to Masterpiece", href: links.masterpiecePodcast }],
     visual: { src: "/images/campyfre.jpg", position: "50% 45%", alt: "Jesse Dan-Yusuf in conversation on stage" },
   },
   {
@@ -56,15 +50,11 @@ const steps: Step[] = [
     icon: Play,
     title: (
       <>
-        Teachings, clips <span className="accent">&amp; films.</span>
+        Watch my <span className="accent">videos.</span>
       </>
     ),
     text: "Messages and short films on identity, purpose and doing the good work God prepared for you.",
-    items: ["Teachings", "Clips", "Films"],
-    links: [
-      { label: "Watch on YouTube", href: links.youtube },
-      { label: "Watch live", href: links.youtubeLive },
-    ],
+    links: [{ label: "Watch Masterpiece", href: links.youtube }],
     visual: { src: "/images/jesse-portrait.jpg", position: "50% 30%", alt: "Jesse Dan-Yusuf preaching" },
   },
 ];
@@ -73,7 +63,7 @@ const ease = [0.22, 1, 0.36, 1] as const;
 
 const Heading = () => (
   <h2 className="display-lg lg:display-xl max-w-[14ch]">
-    Ideas for becoming who <span className="accent">God made you to be.</span>
+    Masterpiece <span className="accent">by Jesse Dan-Yusuf.</span>
   </h2>
 );
 
@@ -82,11 +72,6 @@ function StepBody({ step }: { step: Step }) {
     <>
       <h3 className="display-md">{step.title}</h3>
       <p className="lede max-w-md mt-4 md:mt-5">{step.text}</p>
-      <ul className="flex flex-wrap gap-x-4 gap-y-1 mt-5 micro">
-        {step.items.map((it) => (
-          <li key={it}>{it}</li>
-        ))}
-      </ul>
       <div className="flex flex-wrap gap-2 mt-6 md:mt-8">
         {step.links.map((l) => (
           <a key={l.label} href={l.href} target="_blank" rel="noopener noreferrer" className="pill">
@@ -174,7 +159,6 @@ function IdeasPinned() {
       <div className="sticky top-0 h-[100svh] flex items-start lg:items-center overflow-hidden">
         <div className="container-x w-full grid grid-cols-12 gap-x-6 gap-y-5 items-center pt-20 lg:pt-0">
           <div className="col-span-12 lg:col-span-6 min-w-0">
-            <p className="label mb-5 md:mb-7">Read · Listen · Watch</p>
             <div className="mb-6 md:mb-8">
               <Heading />
             </div>

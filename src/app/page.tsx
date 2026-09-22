@@ -7,12 +7,11 @@ import { MasterpieceStatement } from "@/components/editorial/MasterpieceStatemen
 import { Ideas } from "@/components/editorial/Ideas";
 import { ServeBuild } from "@/components/editorial/ServeBuild";
 import { Story } from "@/components/editorial/Story";
-import { SelectedWork } from "@/components/editorial/SelectedWork";
 import { WorkWithMe } from "@/components/editorial/WorkWithMe";
 import { Newsletter } from "@/components/editorial/Newsletter";
 import { Footer } from "@/components/editorial/Footer";
 
-// Hero → Masterpiece → Ideas → One City/Fyreworks → Story → Selected Work → Work With Me → Newsletter → Footer
+// Hero → Masterpiece → Ideas → One City/Fyreworks → Story → Work With Me → Newsletter → Footer
 export default function Home() {
   return (
     <EditorialShell>
@@ -23,7 +22,6 @@ export default function Home() {
       <Ideas />
       <ServeBuild />
       <Story />
-      <SelectedWork />
       <WorkWithMe />
       <Newsletter />
       <Footer />

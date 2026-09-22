@@ -104,6 +104,7 @@ export default function RootLayout({
               image: `${siteUrl}/images/hero-portrait.jpg`,
               sameAs: [
                 "https://www.instagram.com/jessedanyusuf",
+                "https://www.tiktok.com/@jessedanyusuf",
                 "https://youtube.com/@jessedanyusuf",
                 "https://twitter.com/jessedanyusuf",
                 "https://linkedin.com/in/jessedanyusuf"
@@ -136,6 +137,7 @@ export default function RootLayout({
               },
               sameAs: [
                 "https://www.instagram.com/jessedanyusuf",
+                "https://www.tiktok.com/@jessedanyusuf",
                 "https://youtube.com/@jessedanyusuf",
                 "https://twitter.com/jessedanyusuf",
                 "https://linkedin.com/in/jessedanyusuf"

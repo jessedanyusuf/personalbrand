@@ -2,9 +2,9 @@
    Everything is scoped under .editorial so the older pages keep their own look. */
 
 .editorial {
-  --ink: #111111;
-  --ink-2: #181818;
-  --ink-3: #222222;
+  --ink: #000000;
+  --ink-2: #0f0f0f;
+  --ink-3: #161616;
   --paper: #ebe8e3;
   --paper-60: rgba(235, 232, 227, 0.6);
   --paper-40: rgba(235, 232, 227, 0.4);
@@ -131,24 +131,21 @@
   text-wrap: balance;
 }
 
-/* Numbered role lines: bold, tight, "(01)" in small italic serif */
+/* Small lead-ins around the hero name: "My name is", "I'm a" */
+.editorial .lead-in {
+  font-size: clamp(0.875rem, 1.3vw, 1.125rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--paper-60);
+}
+
+/* Role lines under the hero name: bold and tight */
 .editorial .role-line {
   font-size: clamp(1.15rem, 2.2vw, 2rem);
   line-height: 0.98;
   letter-spacing: -0.055em;
   font-weight: 700;
   white-space: nowrap;
-}
-.editorial .role-line .num {
-  font-family: var(--font-instrument-serif), Georgia, serif;
-  font-style: italic;
-  font-weight: 400;
-  font-size: 0.45em;
-  letter-spacing: 0;
-  position: relative;
-  top: -0.55em;
-  margin-right: 0.5em;
-  opacity: 0.6;
 }
 
 /* Small inline numeral used in lists: (01) */
@@ -304,12 +301,6 @@
 .editorial .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 .editorial .hide-scrollbar::-webkit-scrollbar { display: none; }
 
-@keyframes editorial-bob {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(5px); }
-}
-.editorial .bob { animation: editorial-bob 2.2s var(--ease) infinite; }
-
 /* Lenis smooth scrolling */
 html.lenis,
 html.lenis body { height: auto; }
@@ -317,6 +308,3 @@ html.lenis body { height: auto; }
 .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
 .lenis.lenis-stopped { overflow: hidden; }
 
-@media (prefers-reduced-motion: reduce) {
-  .editorial .bob { animation: none; }
-}

@@ -6,7 +6,9 @@ import { email, socials } from "@/lib/site";
 const navigate = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
-  { name: "Ideas", href: "/#ideas" },
+  { name: "Masterpiece", href: "/#masterpiece" },
+  { name: "Serving", href: "/#serving" },
+  { name: "Building", href: "/#building" },
   { name: "Work With Me", href: "/#work-with-me" },
   { name: "Newsletter", href: "/#newsletter" },
 ];

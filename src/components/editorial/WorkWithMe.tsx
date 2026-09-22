@@ -61,8 +61,7 @@ export function WorkWithMe() {
                 className="group grid grid-cols-12 gap-x-4 gap-y-4 items-baseline py-8 md:py-12"
                 aria-label={`${p.label}: ${p.cta}`}
               >
-                <span className="col-span-12 lg:col-span-1 num-sm text-base md:text-xl text-[color:var(--paper-40)]">(0{i + 1})</span>
-                <h3 className="col-span-12 lg:col-span-7 display-xl !leading-[0.95] transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] lg:group-hover:translate-x-4">
+                <h3 className="col-span-12 lg:col-span-8 display-xl !leading-[0.95] transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] lg:group-hover:translate-x-4">
                   {p.title}
                 </h3>
                 <div className="col-span-12 lg:col-span-4 lg:pl-6">

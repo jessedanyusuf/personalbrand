@@ -10,9 +10,9 @@ import { email, socials } from "@/lib/site";
 const navItems = [
   { name: "About", accent: "Me", href: "/about" },
   { name: "Masterpiece", accent: "", href: "/#masterpiece" },
-  { name: "Ideas", accent: "", href: "/#ideas" },
+  { name: "Serving", accent: "", href: "/#serving" },
+  { name: "Building", accent: "", href: "/#building" },
   { name: "Work", accent: "With Me", href: "/#work-with-me" },
-  { name: "Newsletter", accent: "", href: "/#newsletter" },
 ];
 
 function MenuLabel({ item }: { item: (typeof navItems)[number] }) {
@@ -62,7 +62,7 @@ export function Nav() {
       <header
         className={cn(
           "fixed top-0 inset-x-0 z-[70] transition-colors duration-500",
-          scrolled && !open ? "bg-[#111111]/80 backdrop-blur-md" : "bg-transparent"
+          scrolled && !open ? "bg-black/80 backdrop-blur-md" : "bg-transparent"
         )}
       >
         <div className="container-x flex items-center justify-between h-16 md:h-20">
@@ -93,7 +93,7 @@ export function Nav() {
                 "group h-11 pl-5 pr-4 rounded-full border flex items-center gap-3 transition-colors duration-300",
                 open
                   ? "bg-[color:var(--paper)] text-[color:var(--ink)] border-[color:var(--paper)]"
-                  : "bg-[#111111]/40 backdrop-blur-md border-white/20 hover:bg-[color:var(--paper)] hover:text-[color:var(--ink)] hover:border-[color:var(--paper)]"
+                  : "bg-black/40 backdrop-blur-md border-white/20 hover:bg-[color:var(--paper)] hover:text-[color:var(--ink)] hover:border-[color:var(--paper)]"
               )}
             >
               <span className="relative block h-[15px] w-[42px] overflow-hidden text-[13px] font-medium leading-[15px]">
@@ -153,7 +153,6 @@ export function Nav() {
                         onClick={() => setOpen(false)}
                         className="group flex items-baseline gap-4 md:gap-6 display-xl text-[color:var(--paper-60)] hover:text-[color:var(--paper)] transition-colors"
                       >
-                        <span className="num-sm text-base md:text-xl opacity-60">(0{i + 1})</span>
                         <span className="slot">
                           <span className="slot-inner">
                             <span className="slot-face">

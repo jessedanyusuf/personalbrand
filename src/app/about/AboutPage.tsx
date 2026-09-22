@@ -78,7 +78,7 @@ export function AboutPage() {
         </Reveal>
         <Reveal delay={0.1}>
           <p className="lede max-w-xl mx-auto mt-10 md:mt-14">
-            Ephesians 2:10 is the thread that runs through my preaching, my writing and my work: we are his workmanship, created for good works God
+            Ephesians 2:10 is the thread that runs through my preaching, my writing and my work: we are his masterpiece, created for good works God
             prepared beforehand.
           </p>
         </Reveal>
@@ -126,7 +126,7 @@ export function AboutPage() {
               <Float amount={28}>
                 {/* Typographic plate until there is a current Fyreworks photograph */}
                 <div className="photo aspect-[16/10] md:aspect-[4/3]">
-                  <div className="absolute inset-0 flex items-end p-6 md:p-8 bg-[radial-gradient(120%_80%_at_70%_110%,#3a1f14_0%,#1a1412_45%,#141414_100%)]">
+                  <div className="absolute inset-0 flex items-end p-6 md:p-8 bg-[radial-gradient(120%_80%_at_70%_110%,#3a1f14_0%,#170f0c_45%,#0c0c0c_100%)]">
                   <p className="text-[clamp(2.8rem,6vw,5.5rem)] leading-[0.85] tracking-[-0.065em] font-medium">
                     Fyre<span className="accent">works</span>
                   </p>
@@ -185,14 +185,13 @@ export function AboutPage() {
           </h2>
         </Reveal>
         <ul className="mt-10 md:mt-20 border-b border-white/10">
-          {roles.map((r, i) => {
+          {roles.map((r) => {
             const row = (
               <div className="grid grid-cols-12 gap-x-4 gap-y-1 items-baseline py-5 md:py-7">
-                <span className="col-span-2 md:col-span-1 num-sm text-sm md:text-base text-[color:var(--paper-40)]">(0{i + 1})</span>
-                <p className="col-span-10 md:col-span-5 text-lg md:text-2xl font-medium tracking-[-0.035em]">
+                <p className="col-span-12 md:col-span-6 text-lg md:text-2xl font-medium tracking-[-0.035em]">
                   {r.role} <span className="text-[color:var(--paper-40)]">&mdash; {r.org}</span>
                 </p>
-                <p className="col-span-10 col-start-3 md:col-span-5 md:col-start-auto body">{r.text}</p>
+                <p className="col-span-12 md:col-span-5 body">{r.text}</p>
                 <span className="hidden md:flex col-span-1 justify-end">
                   {r.href && <ArrowUpRight className="w-4 h-4 opacity-40 group-hover:opacity-100 transition-opacity" strokeWidth={1.75} aria-hidden />}
                 </span>
