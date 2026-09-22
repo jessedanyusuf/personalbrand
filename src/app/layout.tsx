@@ -1,8 +1,18 @@
 import type { Metadata } from "next";
+import { Instrument_Serif, Inter } from "next/font/google";
 import "./globals.css";
 import { Instagram, Youtube, Twitter, Mail, Linkedin, Facebook } from "lucide-react";
 import Link from "next/link";
 
+
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
+const instrumentSerif = Instrument_Serif({
+  subsets: ["latin"],
+  weight: ["400"],
+  style: ["normal", "italic"],
+  variable: "--font-instrument-serif",
+  display: "swap",
+});
 
 const siteUrl = "https://jessedanyusuf.com";
 
@@ -72,13 +82,15 @@ export const metadata: Metadata = {
   }
 };
 
+import { BackToTop } from "@/components/ui/back-to-top";
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${inter.variable} ${instrumentSerif.variable}`}>
       <head>
         {/* JSON-LD Structured Data for Person */}
         <script
@@ -134,7 +146,7 @@ export default function RootLayout({
       </head>
       <body suppressHydrationWarning className="min-h-screen bg-black text-white flex flex-col">
         <main className="flex-grow">{children}</main>
-
+        <BackToTop />
       </body>
     </html>
   );

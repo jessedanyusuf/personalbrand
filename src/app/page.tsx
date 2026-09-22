@@ -1,32 +1,32 @@
 "use client";
 
-import dynamic from "next/dynamic";
-import Footer from "@/components/footer";
-import { HeroSection } from "@/components/sections/hero-section";
-import { MissionSection } from "@/components/sections/mission-section";
-import { LogoSection } from "@/components/sections/logo-section";
+import { EditorialShell } from "@/components/editorial/EditorialShell";
+import { Nav } from "@/components/editorial/Nav";
+import { Hero } from "@/components/editorial/Hero";
+import { MasterpieceStatement } from "@/components/editorial/MasterpieceStatement";
+import { Ideas } from "@/components/editorial/Ideas";
+import { ServeBuild } from "@/components/editorial/ServeBuild";
+import { Story } from "@/components/editorial/Story";
+import { SelectedWork } from "@/components/editorial/SelectedWork";
+import { WorkWithMe } from "@/components/editorial/WorkWithMe";
+import { Newsletter } from "@/components/editorial/Newsletter";
+import { Footer } from "@/components/editorial/Footer";
 
-// Lazy load below-the-fold sections
-const FeaturedBookSection = dynamic(() => import("@/components/sections/featured-book-section").then(mod => ({ default: mod.FeaturedBookSection })), { ssr: false });
-const CommunitiesSection = dynamic(() => import("@/components/sections/communities-section").then(mod => ({ default: mod.CommunitiesSection })), { ssr: false });
-const MyStorySection = dynamic(() => import("@/components/sections/my-story-section").then(mod => ({ default: mod.MyStorySection })), { ssr: false });
-const NewsletterSection = dynamic(() => import("@/components/sections/newsletter-section").then(mod => ({ default: mod.NewsletterSection })), { ssr: false });
-const MasterClassSection = dynamic(() => import("@/components/sections/masterclass-section").then(mod => ({ default: mod.MasterClassSection })), { ssr: false });
-
-
+// Hero → Masterpiece → Ideas → One City/Fyreworks → Story → Selected Work → Work With Me → Newsletter → Footer
 export default function Home() {
   return (
-    <div className="min-h-screen bg-black text-white">
-      <HeroSection />
-      <MissionSection />
-      <LogoSection />
-      <FeaturedBookSection />
-      <CommunitiesSection />
-      {/* <WorkingOnSection /> */}
-      <MyStorySection />
-      <NewsletterSection />
-      <MasterClassSection />
+    <EditorialShell>
+      <div id="top" />
+      <Nav />
+      <Hero />
+      <MasterpieceStatement />
+      <Ideas />
+      <ServeBuild />
+      <Story />
+      <SelectedWork />
+      <WorkWithMe />
+      <Newsletter />
       <Footer />
-    </div>
+    </EditorialShell>
   );
 }
