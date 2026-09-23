@@ -2,43 +2,43 @@
 
 import type { ReactNode } from "react";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
-import { links } from "@/lib/site";
+import { ArrowRight } from "lucide-react";
 import { Reveal } from "./Reveal";
 
+// The three offers from the Work With Me page; each row opens that offer's section there
 const paths: { title: ReactNode; label: string; text: string; cta: string; href: string }[] = [
   {
     title: (
       <>
-        Speaking <span className="accent">&amp; teaching</span>
+        Join my <span className="accent">Mastermind.</span>
       </>
     ),
-    label: "Speaking & Teaching",
-    text: "Invite Jesse to speak, preach or teach at your church, conference or gathering.",
-    cta: "Invite Jesse",
-    href: links.speaking,
+    label: "Mastermind",
+    text: "Build alongside people who are serious about growth.",
+    cta: "Join the Mastermind",
+    href: "/work-with-me#mastermind",
   },
   {
     title: (
       <>
-        Build something <span className="accent">with Fyreworks</span>
+        Join a <span className="accent">Masterclass.</span>
       </>
     ),
-    label: "Fyreworks",
-    text: "Brand strategy, creative direction and design for bold ideas.",
-    cta: "Start a project",
-    href: links.fyreworks,
+    label: "Masterclass",
+    text: "Go deeper on one idea that could change how you work and live.",
+    cta: "Explore Masterclasses",
+    href: "/work-with-me#masterclass",
   },
   {
     title: (
       <>
-        For creatives <span className="accent">at Campfyre</span>
+        Work with me <span className="accent">1:1.</span>
       </>
     ),
-    label: "Campfyre",
-    text: "Helping creatives make a living and impact doing what they love.",
-    cta: "Join Campfyre",
-    href: links.campfyre,
+    label: "1:1 Coaching",
+    text: "Sometimes you need a room where the whole conversation is about you.",
+    cta: "Apply for 1:1 Coaching",
+    href: "/work-with-me#coaching",
   },
 ];
 
@@ -56,9 +56,8 @@ export function WorkWithMe() {
         {paths.map((p, i) => (
           <li key={p.label} className="border-t border-white/10 last:border-b">
             <Reveal delay={0.06 * i}>
-              <a
+              <Link
                 href={p.href}
-                {...(p.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                 className="group grid grid-cols-12 gap-x-4 gap-y-4 items-baseline py-8 md:py-12"
                 aria-label={`${p.label}: ${p.cta}`}
               >
@@ -69,18 +68,18 @@ export function WorkWithMe() {
                   <p className="body max-w-sm">{p.text}</p>
                   <span className="arrow-link mt-5">
                     {p.cta}
-                    <ArrowUpRight className="w-4 h-4 transition-transform duration-500 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" strokeWidth={1.75} aria-hidden />
+                    <ArrowRight className="w-4 h-4 transition-transform duration-500 group-hover:translate-x-1" strokeWidth={1.75} aria-hidden />
                   </span>
                 </div>
-              </a>
+              </Link>
             </Reveal>
           </li>
         ))}
       </ol>
 
       <Reveal className="mt-12 md:mt-16 text-center">
-        <Link href="/work-with-me" className="pill">
-          Mastermind, masterclasses &amp; 1:1 coaching
+        <Link href="/work-with-me#start" className="pill">
+          Not sure where to start?
         </Link>
       </Reveal>
     </section>

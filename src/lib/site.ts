@@ -23,5 +23,4 @@ export const links = {
   oneCity: "https://www.onecityabuja.com",
   fyreworks: "https://www.fyreworks.co",
   campfyre: "https://campfyre.substack.com",
-  speaking: `mailto:${email}?subject=${encodeURIComponent("Speaking invitation")}`,
 };
