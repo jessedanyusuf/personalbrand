@@ -22,7 +22,7 @@ interface Role {
 const roles: Role[] = [
   { role: "Lead Pastor", org: "One City Church Abuja", text: "A gospel movement helping everyone, everywhere, become one with God.", href: links.oneCity },
   { role: "Creative Director", org: "Fyreworks", text: "A creative studio helping visionaries turn bold ideas into meaningful impact.", href: links.fyreworks },
-  { role: "Founder", org: "Campfyre", text: "Courses, community and resources for building a sustainable creative life.", href: links.campfyre },
+  { role: "Founder", org: "Campfyre", text: "Helping creatives make a living and impact doing what they love.", href: links.campfyre },
   { role: "Writer", org: "Masterpiece", text: "An ongoing letter about faith, creativity, calling and becoming.", href: links.masterpiece },
   { role: "Co-facilitator", org: "Becoming One", text: "One City's pre-marriage course, led with Eva alongside trained mentor couples." },
 ];
@@ -138,7 +138,7 @@ export function AboutPage() {
           <div className="col-span-12 md:col-span-6 lg:col-span-5 lg:col-start-8 md:pt-32 lg:pt-48">
             <Reveal delay={0.1}>
               <h2 className="display-md">
-                And <span className="accent">Campfyre,</span> a home for creatives building a sustainable creative life.
+                And <span className="accent">Campfyre,</span> helping creatives make a living and impact doing what they love.
               </h2>
             </Reveal>
             <Reveal className="mt-8 md:mt-10" delay={0.2}>

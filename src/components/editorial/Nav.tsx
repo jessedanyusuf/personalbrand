@@ -12,7 +12,7 @@ const navItems = [
   { name: "Masterpiece", accent: "", href: "/#masterpiece" },
   { name: "Serving", accent: "", href: "/#serving" },
   { name: "Building", accent: "", href: "/#building" },
-  { name: "Work", accent: "With Me", href: "/#work-with-me" },
+  { name: "Work", accent: "With Me", href: "/work-with-me" },
 ];
 
 function MenuLabel({ item }: { item: (typeof navItems)[number] }) {

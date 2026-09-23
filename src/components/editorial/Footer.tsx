@@ -9,8 +9,7 @@ const navigate = [
   { name: "Masterpiece", href: "/#masterpiece" },
   { name: "Serving", href: "/#serving" },
   { name: "Building", href: "/#building" },
-  { name: "Work With Me", href: "/#work-with-me" },
-  { name: "Newsletter", href: "/#newsletter" },
+  { name: "Work With Me", href: "/work-with-me" },
 ];
 
 const linkClass = "text-[14px] font-medium text-[color:var(--paper-60)] hover:text-[color:var(--paper)] transition-colors";
@@ -21,11 +20,11 @@ export function Footer() {
       <div className="grid grid-cols-12 gap-x-6 gap-y-12 md:grid-rows-[1fr_auto]">
         <div className="col-span-12 md:col-span-6 md:row-start-1">
           <h2 className="display-md max-w-[18ch]">
-            Serving One City. Building Fyreworks. <span className="accent">Writing Masterpiece.</span>
+            Helping You Find Your Story, in <span className="accent">God&apos;s Story</span>
           </h2>
-          <a href="/#work-with-me" className="pill mt-8">
+          <Link href="/work-with-me" className="pill mt-8">
             Work with me
-          </a>
+          </Link>
         </div>
 
         <div className="col-span-6 md:col-span-2 md:col-start-7 lg:col-span-3 md:row-span-2">

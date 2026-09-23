@@ -1,6 +1,7 @@
 "use client";
 
 import type { ReactNode } from "react";
+import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { links } from "@/lib/site";
 import { Reveal } from "./Reveal";
@@ -35,7 +36,7 @@ const paths: { title: ReactNode; label: string; text: string; cta: string; href:
       </>
     ),
     label: "Campfyre",
-    text: "Courses, community and resources for building a sustainable creative life.",
+    text: "Helping creatives make a living and impact doing what they love.",
     cta: "Join Campfyre",
     href: links.campfyre,
   },
@@ -76,6 +77,12 @@ export function WorkWithMe() {
           </li>
         ))}
       </ol>
+
+      <Reveal className="mt-12 md:mt-16 text-center">
+        <Link href="/work-with-me" className="pill">
+          Mastermind, masterclasses &amp; 1:1 coaching
+        </Link>
+      </Reveal>
     </section>
   );
 }
