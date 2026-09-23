@@ -76,12 +76,6 @@ export function WorkWithMe() {
           </li>
         ))}
       </ol>
-
-      <Reveal className="mt-12 md:mt-16 text-center">
-        <Link href="/work-with-me#start" className="pill">
-          Not sure where to start?
-        </Link>
-      </Reveal>
     </section>
   );
 }

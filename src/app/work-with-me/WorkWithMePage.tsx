@@ -1,21 +1,24 @@
 "use client";
 
-import { useState, type FormEvent, type ReactNode } from "react";
-import { ArrowRight, ChevronDown } from "lucide-react";
+import type { ReactNode } from "react";
+import Image from "next/image";
+import { ArrowRight } from "lucide-react";
 import { email } from "@/lib/site";
 import { EditorialShell } from "@/components/editorial/EditorialShell";
 import { Nav } from "@/components/editorial/Nav";
 import { PageHero } from "@/components/editorial/PageHero";
 import { Reveal } from "@/components/editorial/Reveal";
+import { Float } from "@/components/editorial/Float";
 import { Footer } from "@/components/editorial/Footer";
 
-const interests = ["Mastermind", "Masterclass", "1:1 Coaching", "Not sure yet"] as const;
-type Interest = (typeof interests)[number];
+/** Opens the visitor's email app, addressed to Jesse, with the subject (and an optional prompt) filled in. */
+const mailTo = (subject: string, body?: string) =>
+  `mailto:${email}?subject=${encodeURIComponent(subject)}${body ? `&body=${encodeURIComponent(body)}` : ""}`;
 
 interface Offer {
   id: string;
   n: string;
-  interest: Interest;
+  href: string;
   title: ReactNode;
   subtitle: string;
   body: string[];
@@ -27,7 +30,7 @@ const offers: Offer[] = [
   {
     id: "mastermind",
     n: "01",
-    interest: "Mastermind",
+    href: mailTo("Mastermind"),
     title: (
       <>
         Join my <span className="accent">Mastermind.</span>
@@ -44,7 +47,7 @@ const offers: Offer[] = [
   {
     id: "masterclass",
     n: "02",
-    interest: "Masterclass",
+    href: mailTo("Masterclasses"),
     title: (
       <>
         Join a <span className="accent">Masterclass.</span>
@@ -61,7 +64,7 @@ const offers: Offer[] = [
   {
     id: "coaching",
     n: "03",
-    interest: "1:1 Coaching",
+    href: mailTo("1:1 Coaching"),
     title: (
       <>
         Work with me <span className="accent">1:1.</span>
@@ -79,30 +82,6 @@ const offers: Offer[] = [
 ];
 
 export function WorkWithMePage() {
-  // Each offer's button opens the enquiry form below with that offer already chosen
-  const [interest, setInterest] = useState<Interest>("Not sure yet");
-  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
-
-  // Netlify Forms: the static HTML carries the form definition; submissions post to the site root
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const form = e.currentTarget;
-    setStatus("sending");
-    try {
-      const pairs = Array.from(new FormData(form).entries()).map(([k, v]) => [k, String(v)]);
-      const res = await fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(pairs).toString(),
-      });
-      if (!res.ok) throw new Error(String(res.status));
-      form.reset();
-      setStatus("sent");
-    } catch {
-      setStatus("error");
-    }
-  };
-
   return (
     <EditorialShell>
       <Nav />
@@ -153,7 +132,7 @@ export function WorkWithMePage() {
                   <p className="text-[15px] md:text-base leading-[1.55] max-w-lg mt-6">
                     <span className="font-semibold">Best for:</span> <span className="text-[color:var(--paper-60)]">{o.bestFor}</span>
                   </p>
-                  <a href="#start" onClick={() => setInterest(o.interest)} className="pill pill-solid !h-12 !px-6 mt-8 group">
+                  <a href={o.href} className="pill pill-solid !h-12 !px-6 mt-8 group">
                     {o.cta}
                     <ArrowRight className="w-4 h-4 transition-transform duration-500 group-hover:translate-x-1" strokeWidth={1.75} aria-hidden />
                   </a>
@@ -164,89 +143,40 @@ export function WorkWithMePage() {
         </div>
       </section>
 
-      {/* Enquiry */}
-      <section id="start" className="container-x pb-20 md:pb-36 scroll-mt-24">
-        <div className="grid grid-cols-12 gap-x-6 gap-y-12">
-          <Reveal className="col-span-12 lg:col-span-5">
-            <h2 className="display-xl max-w-[12ch]">
-              Not sure where <span className="accent">to start?</span>
-            </h2>
-            <p className="lede max-w-md mt-6 md:mt-8">Tell me where you are, what you&apos;re working through, and what you&apos;re hoping to change.</p>
-          </Reveal>
-
-          <Reveal className="col-span-12 lg:col-span-6 lg:col-start-7" delay={0.1}>
-            {status === "sent" ? (
-              <div className="lg:pt-4">
-                <p className="display-md">Thank you.</p>
-                <p className="body max-w-md mt-4">Your message is on its way. I&apos;ll read it properly and reply personally.</p>
+      {/* Speaking invitations: separate from the three ways to work together */}
+      <section id="speaking" className="container-x pb-20 md:pb-36 scroll-mt-24">
+        <div className="grid grid-cols-12 gap-x-6 gap-y-12 items-center">
+          <Reveal className="col-span-10 sm:col-span-7 md:col-span-5">
+            <Float amount={36}>
+              <div className="photo aspect-[4/5]">
+                <Image
+                  src="/images/jesse-portrait.jpg"
+                  alt="Jesse Dan-Yusuf speaking on stage"
+                  fill
+                  sizes="(min-width: 768px) 40vw, 80vw"
+                  style={{ objectPosition: "50% 30%" }}
+                />
               </div>
-            ) : (
-              <form
-                name="work-with-me"
-                method="POST"
-                data-netlify="true"
-                netlify-honeypot="bot-field"
-                onSubmit={handleSubmit}
-                className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-7 lg:pt-4 [color-scheme:dark]"
-              >
-                <input type="hidden" name="form-name" value="work-with-me" />
-                <p className="hidden">
-                  <label>
-                    Leave this empty: <input name="bot-field" />
-                  </label>
-                </p>
-                <label className="block">
-                  <span className="micro block mb-1">Name</span>
-                  <input type="text" name="name" required autoComplete="name" className="field !text-base md:!text-lg" placeholder="Your name" />
-                </label>
-                <label className="block">
-                  <span className="micro block mb-1">Email</span>
-                  <input type="email" name="email" required autoComplete="email" className="field !text-base md:!text-lg" placeholder="you@example.com" />
-                </label>
-                <label className="block relative sm:col-span-2">
-                  <span className="micro block mb-1">I&apos;m interested in</span>
-                  <select
-                    name="interest"
-                    value={interest}
-                    onChange={(e) => setInterest(e.target.value as Interest)}
-                    className="field !text-base md:!text-lg appearance-none pr-8"
-                  >
-                    {interests.map((option) => (
-                      <option key={option} value={option} className="bg-black text-[color:var(--paper)]">
-                        {option}
-                      </option>
-                    ))}
-                  </select>
-                  <ChevronDown className="w-4 h-4 absolute right-0 bottom-4 text-[color:var(--paper-60)] pointer-events-none" aria-hidden />
-                </label>
-                <label className="block sm:col-span-2">
-                  <span className="micro block mb-1">Where are you, and what are you hoping to change?</span>
-                  <textarea name="message" rows={4} required className="field !text-base md:!text-lg resize-none" placeholder="A few lines is plenty" />
-                </label>
-                <div className="sm:col-span-2 flex flex-wrap items-center gap-5 pt-2">
-                  <button type="submit" disabled={status === "sending"} className="pill pill-solid !h-12 !px-6 group disabled:opacity-60">
-                    {status === "sending" ? (
-                      "Sending…"
-                    ) : (
-                      <>
-                        Find the right fit
-                        <ArrowRight className="w-4 h-4 transition-transform duration-500 group-hover:translate-x-1" strokeWidth={1.75} aria-hidden />
-                      </>
-                    )}
-                  </button>
-                  {status === "error" && (
-                    <p className="micro">
-                      Something went wrong. You can also email{" "}
-                      <a href={`mailto:${email}`} className="text-[color:var(--paper)] underline underline-offset-4">
-                        {email}
-                      </a>
-                      .
-                    </p>
-                  )}
-                </div>
-              </form>
-            )}
+            </Float>
           </Reveal>
+          <div className="col-span-12 md:col-span-6 md:col-start-7">
+            <Reveal>
+              <p className="label mb-6 md:mb-8">Speaking</p>
+              <h2 className="display-xl">
+                Invite me to <span className="accent">speak.</span>
+              </h2>
+            </Reveal>
+            <Reveal delay={0.1}>
+              <p className="text-lg md:text-xl leading-[1.3] font-medium tracking-[-0.03em] mt-6 md:mt-8 max-w-md">
+                Speaking, preaching and teaching.
+              </p>
+              <p className="body max-w-md mt-4">Invite me to speak, preach or teach at your church, conference or gathering.</p>
+              <a href={mailTo("Speaking invitation", "Event:\nDate:\nLocation:\nAudience:\n")} className="pill pill-solid !h-12 !px-6 mt-8 group">
+                Invite me to speak
+                <ArrowRight className="w-4 h-4 transition-transform duration-500 group-hover:translate-x-1" strokeWidth={1.75} aria-hidden />
+              </a>
+            </Reveal>
+          </div>
         </div>
       </section>
 
