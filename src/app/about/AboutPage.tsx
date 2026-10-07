@@ -66,7 +66,7 @@ export function AboutPage() {
           </p>
         </div>
         <p className="text-xl md:text-2xl leading-[1.2] tracking-[-0.035em] mt-6 md:mt-8">
-          Different expressions. <span className="accent">One calling.</span>
+          Different expressions. <span className="accent">One story.</span>
         </p>
       </PageHero>
 
