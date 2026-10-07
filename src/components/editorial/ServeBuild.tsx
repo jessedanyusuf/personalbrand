@@ -146,7 +146,7 @@ export function ServeBuild() {
               alt="Jesse Dan-Yusuf teaching"
               fill
               sizes="(min-width: 768px) 33vw, 100vw"
-              className={cn("object-[50%_35%]", zoom)}
+              className={cn("object-[50%_35%] grayscale", zoom)}
             />
           }
         />
