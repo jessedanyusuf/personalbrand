@@ -126,6 +126,7 @@ export function AboutPage() {
                   position="50% 40%"
                   aspect="aspect-[16/10] md:aspect-[4/3]"
                   sizes="(min-width: 768px) 45vw, 100vw"
+                  className="grayscale"
                 />
               </Float>
             </Reveal>
