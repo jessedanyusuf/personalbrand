@@ -103,7 +103,7 @@ export function ServeBuild() {
               alt="Jesse Dan-Yusuf preaching at One City Church"
               fill
               sizes="(min-width: 768px) 33vw, 100vw"
-              className={cn("object-[50%_30%]", zoom)}
+              className={cn("object-[50%_30%] grayscale", zoom)}
             />
           }
         />
