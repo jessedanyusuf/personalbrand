@@ -15,20 +15,21 @@ export function MasterpieceStatement() {
     <section id="masterpiece" ref={ref} className="relative py-24 md:py-40 overflow-hidden">
       <div className="container-x">
         <Reveal>
-          <h2 className="statement text-center max-w-[18ch] mx-auto">
-            I help people find their story in <span className="accent">God&apos;s story.</span>
-          </h2>
-        </Reveal>
-        <Reveal delay={0.1}>
-          <p className="label text-center mt-24 md:mt-40 mb-8 md:mb-12">Becoming God&apos;s</p>
+          <p className="label text-center mb-8 md:mb-12">Becoming God&apos;s</p>
         </Reveal>
       </div>
 
-      <m.p className="display-giant text-center" style={reduce ? undefined : { x }}>
+      <m.h2 className="display-giant text-center" style={reduce ? undefined : { x }}>
         MASTERPIECE
-      </m.p>
+      </m.h2>
 
       <div className="container-x">
+        {/* Masterpiece is the lens on everything else: the worldview behind the work, not just a newsletter */}
+        <Reveal delay={0.1}>
+          <p className="display-md text-center mt-8 md:mt-12">
+            Ideas for becoming <span className="accent">who God made you to be.</span>
+          </p>
+        </Reveal>
         <Reveal delay={0.1}>
           <p className="statement text-center max-w-[24ch] mx-auto mt-16 md:mt-28">
             Your life is God&apos;s masterpiece. You were made <span className="accent">on purpose, for a purpose,</span> and invited to

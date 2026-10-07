@@ -4,7 +4,8 @@ import Image from "next/image";
 import { useRef } from "react";
 import { m, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { CountUp } from "./CountUp";
-import { RoleReel } from "./RoleReel";
+import Link from "next/link";
+import { links } from "@/lib/site";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -67,14 +68,25 @@ export function Hero() {
             Jesse <span className="accent">Dan-Yusuf</span>
           </m.h1>
 
-          {/* "I'm a Pastor": one role at a time on a slot-machine reel, just under the name */}
+          {/* The line the whole site hangs on, then the roles and the two ways in */}
           <m.div
-            className="mt-5 md:mt-8 flex justify-center"
+            className="mt-6 md:mt-10 flex flex-col items-center text-center"
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease, delay: 0.45 }}
           >
-            <RoleReel />
+            <p className="display-md max-w-[30ch] [text-wrap:balance]">
+              I help people find their story in <span className="accent">God&apos;s story.</span>
+            </p>
+            <p className="lead-in mt-3 md:mt-4">Pastor &middot; Creator &middot; Entrepreneur</p>
+            <div className="flex flex-wrap justify-center gap-3 mt-6 md:mt-8">
+              <a href={links.masterpiece} target="_blank" rel="noopener noreferrer" className="pill pill-solid">
+                Read Masterpiece
+              </a>
+              <Link href="/work-with-me" className="pill bg-black/30 backdrop-blur-sm">
+                Work With Me
+              </Link>
+            </div>
           </m.div>
         </div>
 

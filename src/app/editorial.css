@@ -131,21 +131,12 @@
   text-wrap: balance;
 }
 
-/* Small lead-ins around the hero name: "My name is", "I'm a" */
+/* Small lead-ins around the hero name: "My name is", "Pastor · Creator · Entrepreneur" */
 .editorial .lead-in {
   font-size: clamp(0.875rem, 1.3vw, 1.125rem);
   font-weight: 500;
   letter-spacing: -0.02em;
   color: var(--paper-60);
-}
-
-/* Role lines under the hero name: bold and tight */
-.editorial .role-line {
-  font-size: clamp(1.15rem, 2.2vw, 2rem);
-  line-height: 0.98;
-  letter-spacing: -0.055em;
-  font-weight: 700;
-  white-space: nowrap;
 }
 
 /* Small inline numeral used in lists: (01) */

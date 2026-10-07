@@ -18,7 +18,6 @@ export function Story() {
                 alt="Jesse Dan-Yusuf"
                 fill
                 sizes="(min-width: 1024px) 40vw, (min-width: 768px) 50vw, 100vw"
-                className="grayscale brightness-[0.78] contrast-[1.05]"
                 style={{ objectPosition: "50% 25%" }}
               />
             </div>

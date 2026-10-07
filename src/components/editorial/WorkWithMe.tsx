@@ -14,7 +14,7 @@ const paths: { title: ReactNode; label: string; text: string; cta: string; href:
       </>
     ),
     label: "Mastermind",
-    text: "Build alongside people who are serious about growth.",
+    text: "Build alongside other visionaries.",
     cta: "Join the Mastermind",
     href: "/work-with-me#mastermind",
   },
@@ -25,7 +25,7 @@ const paths: { title: ReactNode; label: string; text: string; cta: string; href:
       </>
     ),
     label: "Masterclass",
-    text: "Go deeper on one idea that could change how you work and live.",
+    text: "Learn the business and spirituality of creativity.",
     cta: "Explore Masterclasses",
     href: "/work-with-me#masterclass",
   },
@@ -36,7 +36,7 @@ const paths: { title: ReactNode; label: string; text: string; cta: string; href:
       </>
     ),
     label: "1:1 Coaching",
-    text: "Sometimes you need a room where the whole conversation is about you.",
+    text: "Think deeply. Find clarity. Move forward.",
     cta: "Apply for 1:1 Coaching",
     href: "/work-with-me#coaching",
   },
@@ -50,6 +50,9 @@ export function WorkWithMe() {
         <h2 className="display-lg max-w-[18ch] mx-auto">
           Let&apos;s make something <span className="accent">meaningful.</span>
         </h2>
+        <p className="lede max-w-xl mx-auto mt-6 md:mt-8">
+          I work with people who are building something, becoming someone, or trying to make sense of the calling on their lives.
+        </p>
       </Reveal>
 
       <ol className="mt-16 md:mt-28">

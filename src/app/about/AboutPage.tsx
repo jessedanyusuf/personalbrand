@@ -50,22 +50,24 @@ export function AboutPage() {
           </>
         }
       >
-        <p className="text-xl sm:text-2xl md:text-3xl leading-[1.15] tracking-[-0.035em] max-w-xl">
-          I&apos;m Jesse Dan-Yusuf, a pastor, creator and entrepreneur{" "}
-          <span className="accent">helping people find their story in God&apos;s story.</span>
+        <p className="display-md max-w-xl">
+          One calling. <span className="accent">Many expressions.</span>
         </p>
-        {/* TODO: Jesse to review and rewrite in his own words */}
         <div className="body space-y-4 max-w-lg mt-6 md:mt-8">
+          <p>I believe every person has a story, and that our stories make the most sense when we find them in God&apos;s story.</p>
+          <p>That&apos;s the thread running through my life and work.</p>
           <p>
-            For as long as I can remember I&apos;ve been fascinated by God, by creativity and by ideas, and by the possibility that a life could be made
-            into something meaningful.
+            I&apos;m a pastor, creator and entrepreneur. I serve as Lead Pastor of One City Church in Abuja, where I&apos;m helping build a gospel
+            movement centred on Jesus and committed to seeing everyone, everywhere, become one with God.
           </p>
+          <p>I also lead Fyreworks, a creative studio helping visionaries turn ideas into meaningful work and build things that matter.</p>
           <p>
-            For a long time those felt like separate paths. Over the years they turned out to be one calling, and today they show up as a church, a
-            creative studio, a community for creatives and a letter called Masterpiece.
+            And through Masterpiece, I write and teach about faith, creativity, calling and the journey of becoming who God made us to be.
           </p>
-          <p>I&apos;m not writing from the finish line. I&apos;m still being made.</p>
         </div>
+        <p className="text-xl md:text-2xl leading-[1.2] tracking-[-0.035em] mt-6 md:mt-8">
+          Different expressions. <span className="accent">One calling.</span>
+        </p>
       </PageHero>
 
       {/* Statement */}
@@ -98,9 +100,10 @@ export function AboutPage() {
             </Reveal>
             <Reveal delay={0.1}>
               <h2 className="display-lg">
-                In 2015, a small group of us gathered in a living room in Abuja. That gathering became <span className="accent">One City Church,</span>{" "}
-                where I serve as Lead Pastor.
+                In 2022, a small group of us began praying and fasting for Abuja. That season gave birth to{" "}
+                <span className="accent">One City Church,</span> a gospel movement with a vision to help everyone, everywhere, become one with God.
               </h2>
+              <p className="lede mt-6 md:mt-8">I serve as Lead Pastor.</p>
               <a href={links.oneCity} target="_blank" rel="noopener noreferrer" className="arrow-link mt-10 group">
                 Visit One City
                 <ArrowUpRight className="w-4 h-4 transition-transform duration-500 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" strokeWidth={1.75} aria-hidden />
