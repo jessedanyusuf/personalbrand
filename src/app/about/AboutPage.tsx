@@ -90,7 +90,7 @@ export function AboutPage() {
         <div className="grid grid-cols-12 gap-x-6 gap-y-12 items-center">
           <Reveal className="col-span-9 sm:col-span-6 lg:col-span-4">
             <Float amount={28}>
-              <Photo src="/images/jesse-preaching.jpg" alt="Jesse Dan-Yusuf preaching at One City Church Abuja" position="50% 30%" sizes="(min-width: 1024px) 33vw, 75vw" />
+              <Photo src="/images/one-city-pastoring.jpg" alt="Jesse Dan-Yusuf preaching at One City Church Abuja" position="50% 25%" sizes="(min-width: 1024px) 33vw, 75vw" />
             </Float>
           </Reveal>
           <div className="col-span-12 lg:col-span-7 lg:col-start-6">
