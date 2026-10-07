@@ -46,7 +46,6 @@ export function WorkWithMe() {
   return (
     <section id="work-with-me" className="container-x py-24 md:py-40">
       <Reveal className="text-center">
-        <p className="label mb-6 md:mb-8">Work with me</p>
         <h2 className="display-lg max-w-[18ch] mx-auto">
           Let&apos;s make something <span className="accent">meaningful.</span>
         </h2>

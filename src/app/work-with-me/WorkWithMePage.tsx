@@ -161,7 +161,6 @@ export function WorkWithMePage() {
           </Reveal>
           <div className="col-span-12 md:col-span-6 md:col-start-7">
             <Reveal>
-              <p className="label mb-6 md:mb-8">Speaking</p>
               <h2 className="display-xl">
                 Invite me to <span className="accent">speak.</span>
               </h2>

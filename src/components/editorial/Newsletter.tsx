@@ -12,7 +12,6 @@ export function Newsletter() {
         <div className="relative rounded-md bg-[color:var(--ink-2)] border border-white/[0.06] px-6 py-16 sm:px-10 md:px-16 md:py-28 overflow-hidden">
           <div className="relative max-w-3xl">
             <Reveal>
-              <p className="label mb-6 md:mb-8">The Masterpiece newsletter</p>
               <h2 className="display-xl max-w-[16ch]">
                 Finding your story in the <span className="accent">greatest story ever told.</span>
               </h2>

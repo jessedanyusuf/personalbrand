@@ -26,7 +26,6 @@ export function Story() {
 
         <div className="col-span-12 md:col-span-6 lg:col-span-6 lg:col-start-7 md:pt-16 lg:pt-28">
           <Reveal>
-            <p className="label mb-6 md:mb-8">My story</p>
             <h2 className="display-lg">
               I&apos;m still becoming the person <span className="accent">God created me to be.</span>
             </h2>

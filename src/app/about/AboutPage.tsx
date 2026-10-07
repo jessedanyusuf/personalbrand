@@ -51,7 +51,7 @@ export function AboutPage() {
         }
       >
         <p className="display-md max-w-xl">
-          One calling. <span className="accent">Many expressions.</span>
+          One story. <span className="accent">Many expressions.</span>
         </p>
         <div className="body space-y-4 max-w-lg mt-6 md:mt-8">
           <p>I believe every person has a story, and that our stories make the most sense when we find them in God&apos;s story.</p>
@@ -73,7 +73,6 @@ export function AboutPage() {
       {/* Statement */}
       <section className="container-x pt-20 md:pt-40 pb-20 md:pb-36 text-center">
         <Reveal>
-          <p className="label mb-8">The idea beneath everything</p>
           <h2 className="statement mx-auto max-w-[22ch]">
             Every life is God&apos;s <span className="accent">masterpiece,</span> made on purpose, for a purpose.
           </h2>
@@ -95,9 +94,6 @@ export function AboutPage() {
             </Float>
           </Reveal>
           <div className="col-span-12 lg:col-span-7 lg:col-start-6">
-            <Reveal>
-              <p className="label mb-6">Serving</p>
-            </Reveal>
             <Reveal delay={0.1}>
               <h2 className="display-lg">
                 In 2022, a small group of us began praying and fasting for Abuja. That season gave birth to{" "}
@@ -115,9 +111,6 @@ export function AboutPage() {
 
       {/* Fyreworks & Campfyre, at opposite ends */}
       <section className="container-x pb-20 md:pb-36">
-        <Reveal>
-          <p className="label mb-8 md:mb-16">Building</p>
-        </Reveal>
         <div className="grid grid-cols-12 gap-x-6 gap-y-14 md:gap-y-16">
           <div className="col-span-12 md:col-span-6 lg:col-span-5">
             <Reveal>
@@ -157,7 +150,6 @@ export function AboutPage() {
         <div className="grid grid-cols-12 gap-x-6 gap-y-12 items-center">
           <div className="col-span-12 lg:col-span-7">
             <Reveal>
-              <p className="label mb-6">Faith &amp; family</p>
               <h2 className="display-lg">
                 At the centre of my life is my family. I&apos;m married to <span className="accent">Eva,</span> and together we&apos;re raising AvaGrace
                 and Eden.
@@ -181,7 +173,6 @@ export function AboutPage() {
       {/* Roles */}
       <section className="container-x pb-8 md:pb-16">
         <Reveal>
-          <p className="label mb-8">Work</p>
           <h2 className="display-xl">
             Where you&apos;ll <span className="accent">find me.</span>
           </h2>

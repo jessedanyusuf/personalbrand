@@ -79,9 +79,8 @@ export function ServeBuild() {
     <section className="container-x py-24 md:py-40">
       <Reveal>
         <Float amount={20}>
-          <p className="label mb-6 md:mb-8">The Work</p>
           <h2 className="display-xl max-w-[14ch]">
-            One calling. <span className="accent">Many expressions.</span>
+            One story. <span className="accent">Many expressions.</span>
           </h2>
         </Float>
       </Reveal>
