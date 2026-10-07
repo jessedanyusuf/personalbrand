@@ -22,7 +22,7 @@ interface CardProps {
   align: "top" | "bottom";
   /** How far the whole card drifts against the scroll, in px: cards with different values move at different speeds. */
   drift: number;
-  /** Let the picture glide inside its frame (photographs only; the typographic plate stays put). */
+  /** Let the picture glide inside its frame. */
   innerParallax?: boolean;
   className?: string;
   delay?: number;
@@ -115,6 +115,7 @@ export function ServeBuild() {
           delay={0.1}
           align="bottom"
           drift={90}
+          innerParallax
           name="Building Fyreworks"
           title={
             <>
@@ -124,23 +125,13 @@ export function ServeBuild() {
           description="A creative studio helping visionaries turn bold ideas into meaningful impact."
           href={links.fyreworks}
           visual={
-            // Typographic plate until there is a current Fyreworks photograph to use here
-            <div
-              className={cn(
-                "absolute inset-0 flex flex-col p-5 md:p-7 bg-[radial-gradient(120%_80%_at_70%_110%,#3a1f14_0%,#170f0c_45%,#0c0c0c_100%)]",
-                zoom
-              )}
-            >
-              <div className="flex justify-between micro">
-                <span>Brand strategy</span>
-                <span>Creative direction</span>
-                <span className="hidden sm:inline">Design</span>
-              </div>
-              {/* Sits in the upper part so the heading and description at the bottom never run into it */}
-              <p className="absolute inset-x-0 top-[30%] text-center text-[clamp(2.5rem,4.5vw,4.25rem)] leading-[0.85] tracking-[-0.065em] font-medium transition-opacity duration-500 group-hover:opacity-40">
-                Fyre<span className="accent">works</span>
-              </p>
-            </div>
+            <Image
+              src="/images/fyreworks-studio.jpg"
+              alt="Jesse Dan-Yusuf at work in the Fyreworks studio"
+              fill
+              sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+              className={cn("object-[50%_40%]", zoom)}
+            />
           }
         />
       </div>

@@ -124,14 +124,13 @@ export function AboutPage() {
             </Reveal>
             <Reveal className="mt-8 md:mt-10" delay={0.1}>
               <Float amount={28}>
-                {/* Typographic plate until there is a current Fyreworks photograph */}
-                <div className="photo aspect-[16/10] md:aspect-[4/3]">
-                  <div className="absolute inset-0 flex items-end p-6 md:p-8 bg-[radial-gradient(120%_80%_at_70%_110%,#3a1f14_0%,#170f0c_45%,#0c0c0c_100%)]">
-                  <p className="text-[clamp(2.8rem,6vw,5.5rem)] leading-[0.85] tracking-[-0.065em] font-medium">
-                    Fyre<span className="accent">works</span>
-                  </p>
-                  </div>
-                </div>
+                <Photo
+                  src="/images/fyreworks-studio.jpg"
+                  alt="Jesse Dan-Yusuf at work in the Fyreworks studio"
+                  position="50% 40%"
+                  aspect="aspect-[16/10] md:aspect-[4/3]"
+                  sizes="(min-width: 768px) 45vw, 100vw"
+                />
               </Float>
             </Reveal>
           </div>
