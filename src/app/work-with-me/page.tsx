@@ -1,12 +1,12 @@
-import type { Metadata } from "next";
 import { WorkWithMePage } from "./WorkWithMePage";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "Work With Me",
   description:
-    "Mastermind, masterclasses and 1:1 coaching with Jesse Dan-Yusuf for creators, founders and leaders who want clarity, direction and the right kind of support for the season they're in.",
-  alternates: { canonical: "/work-with-me" },
-};
+    "Mastermind, masterclasses, 1:1 coaching and speaking with Jesse Dan-Yusuf, for people who are building something, becoming someone, or making sense of the calling on their lives.",
+  path: "/work-with-me",
+});
 
 export default function Page() {
   return <WorkWithMePage />;

@@ -131,7 +131,7 @@
   text-wrap: balance;
 }
 
-/* Small lead-ins around the hero name: "My name is", "Pastor · Creator · Entrepreneur" */
+/* Small lead-ins around the hero name: "Hi, I'm", "Pastor · Creator · Entrepreneur" */
 .editorial .lead-in {
   font-size: clamp(0.875rem, 1.3vw, 1.125rem);
   font-weight: 500;

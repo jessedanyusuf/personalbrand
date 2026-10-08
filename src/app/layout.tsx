@@ -1,4 +1,5 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+import { HOME_DESCRIPTION, HOME_TITLE, OG_IMAGE, SAME_AS, SITE_NAME, SITE_URL, TAGLINE, TWITTER_HANDLE } from "@/lib/seo";
 import { Instrument_Serif, Inter } from "next/font/google";
 import "./globals.css";
 import { Instagram, Youtube, Twitter, Mail, Linkedin, Facebook } from "lucide-react";
@@ -14,52 +15,53 @@ const instrumentSerif = Instrument_Serif({
   display: "swap",
 });
 
-const siteUrl = "https://jessedanyusuf.com";
+const siteUrl = SITE_URL;
 
+// Site-wide defaults. Pages set their own title, description, canonical URL and share card through pageMeta();
+// older pages without their own metadata fall back to these (the canonical URL is left per page on purpose).
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: "Jesse Dan-Yusuf - Creator, Pastor & Entrepreneur",
-    template: "%s | Jesse Dan-Yusuf"
+    default: HOME_TITLE,
+    template: `%s | ${SITE_NAME}`,
   },
-  description: "Jesse Dan-Yusuf is a creator, entrepreneur, and pastor committed to helping people find their purpose and fulfil their potential through communities, books, and resources.",
+  description: HOME_DESCRIPTION,
+  applicationName: SITE_NAME,
   keywords: [
     "Jesse Dan-Yusuf",
-    "Purpose-driven creator",
-    "Christian entrepreneur",
-    "Personal development",
-    "Creative entrepreneurship",
-    "Faith-based leadership",
-    "One City Church",
+    "Masterpiece",
+    "One City Church Abuja",
+    "Fyreworks",
     "Campfyre",
-    "The Cave"
+    "pastor",
+    "creator",
+    "entrepreneur",
+    "faith and creativity",
+    "calling",
+    "Christian leadership",
+    "Abuja",
+    "Nigeria",
   ],
-  authors: [{ name: "Jesse Dan-Yusuf" }],
-  creator: "Jesse Dan-Yusuf",
+  authors: [{ name: SITE_NAME, url: SITE_URL }],
+  creator: SITE_NAME,
   publisher: "The Jesse Dan-Yusuf Co.",
+  category: "faith",
   openGraph: {
     type: "website",
-    locale: "en_US",
-    url: siteUrl,
-    siteName: "Jesse Dan-Yusuf",
-    title: "Jesse Dan-Yusuf - Creator, Pastor & Entrepreneur",
-    description: "Helping people find their purpose and fulfil their potential through content, communities, and resources.",
-    images: [
-      {
-        url: "/images/hero-portrait.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Jesse Dan-Yusuf"
-      }
-    ]
+    locale: "en_GB",
+    url: "/",
+    siteName: SITE_NAME,
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
+    images: [OG_IMAGE],
   },
   twitter: {
     card: "summary_large_image",
-    site: "@jessedanyusuf",
-    creator: "@jessedanyusuf",
-    title: "Jesse Dan-Yusuf - Creator, Pastor & Entrepreneur",
-    description: "Helping people find their purpose and fulfil their potential.",
-    images: ["/images/hero-portrait.jpg"]
+    site: TWITTER_HANDLE,
+    creator: TWITTER_HANDLE,
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
+    images: [{ url: OG_IMAGE.url, alt: OG_IMAGE.alt }],
   },
   robots: {
     index: true,
@@ -69,17 +71,15 @@ export const metadata: Metadata = {
       follow: true,
       "max-video-preview": -1,
       "max-image-preview": "large",
-      "max-snippet": -1
-    }
+      "max-snippet": -1,
+    },
   },
-  verification: {
-    // Add your verification tokens here when available
-    // google: "your-google-verification-code",
-    // yandex: "your-yandex-verification-code",
-  },
-  alternates: {
-    canonical: siteUrl
-  }
+  formatDetection: { telephone: false },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#000000",
+  colorScheme: "dark",
 };
 
 import { BackToTop } from "@/components/ui/back-to-top";
@@ -92,57 +92,49 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${instrumentSerif.variable}`}>
       <head>
-        {/* JSON-LD Structured Data for Person */}
+        {/* Structured data for search engines: Jesse, the places he works, and the company behind the site */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "Person",
-              name: "Jesse Dan-Yusuf",
-              url: siteUrl,
-              image: `${siteUrl}/images/hero-portrait.jpg`,
-              sameAs: [
-                "https://www.instagram.com/jessedanyusuf",
-                "https://www.tiktok.com/@jessedanyusuf",
-                "https://youtube.com/@jessedanyusuf",
-                "https://twitter.com/jessedanyusuf",
-                "https://linkedin.com/in/jessedanyusuf"
+              "@graph": [
+                {
+                  "@type": "Person",
+                  "@id": `${siteUrl}/#jesse`,
+                  name: "Jesse Dan-Yusuf",
+                  url: siteUrl,
+                  image: `${siteUrl}${OG_IMAGE.url}`,
+                  description: TAGLINE,
+                  jobTitle: ["Lead Pastor", "Creator", "Entrepreneur"],
+                  worksFor: [
+                    { "@type": "Church", name: "One City Church Abuja", url: "https://www.onecityabuja.com" },
+                    { "@type": "Organization", name: "Fyreworks", url: "https://www.fyreworks.co" },
+                  ],
+                  address: { "@type": "PostalAddress", addressLocality: "Abuja", addressCountry: "NG" },
+                  knowsAbout: ["Faith", "Creativity", "Calling", "Leadership", "Storytelling", "Personal brand", "Meaningful work"],
+                  sameAs: SAME_AS,
+                },
+                {
+                  "@type": "WebSite",
+                  "@id": `${siteUrl}/#website`,
+                  url: siteUrl,
+                  name: SITE_NAME,
+                  description: TAGLINE,
+                  publisher: { "@id": `${siteUrl}/#company` },
+                  inLanguage: "en",
+                },
+                {
+                  "@type": "Organization",
+                  "@id": `${siteUrl}/#company`,
+                  name: "The Jesse Dan-Yusuf Co.",
+                  url: siteUrl,
+                  logo: `${siteUrl}/icon.png`,
+                  founder: { "@id": `${siteUrl}/#jesse` },
+                  sameAs: SAME_AS,
+                },
               ],
-              jobTitle: "Creator, Pastor & Entrepreneur",
-              description: "Creator, entrepreneur, and pastor committed to helping people find their purpose and fulfil their potential.",
-              knowsAbout: [
-                "Purpose-driven branding",
-                "Creative entrepreneurship",
-                "Faith-based leadership",
-                "Personal development",
-                "Community building"
-              ]
-            })
-          }}
-        />
-        {/* JSON-LD for Organization */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              name: "The Jesse Dan-Yusuf Co.",
-              url: siteUrl,
-              logo: `${siteUrl}/images/jessedanyusuf.svg`,
-              founder: {
-                "@type": "Person",
-                name: "Jesse Dan-Yusuf"
-              },
-              sameAs: [
-                "https://www.instagram.com/jessedanyusuf",
-                "https://www.tiktok.com/@jessedanyusuf",
-                "https://youtube.com/@jessedanyusuf",
-                "https://twitter.com/jessedanyusuf",
-                "https://linkedin.com/in/jessedanyusuf"
-              ]
-            })
+            }),
           }}
         />
       </head>

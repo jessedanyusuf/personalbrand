@@ -1,12 +1,12 @@
-import type { Metadata } from "next";
 import { AboutPage } from "./AboutPage";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "About",
   description:
-    "Jesse Dan-Yusuf is a pastor, creator and entrepreneur: Lead Pastor of One City Church Abuja, building the creative studio Fyreworks, and writing Masterpiece.",
-  alternates: { canonical: "/about" },
-};
+    "One story. Many expressions. Jesse Dan-Yusuf is Lead Pastor of One City Church in Abuja, leads the creative studio Fyreworks, and writes and teaches through Masterpiece.",
+  path: "/about",
+});
 
 export default function Page() {
   return <AboutPage />;

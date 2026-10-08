@@ -1,5 +1,4 @@
-"use client";
-
+import { HOME_DESCRIPTION, pageMeta } from "@/lib/seo";
 import { EditorialShell } from "@/components/editorial/EditorialShell";
 import { Nav } from "@/components/editorial/Nav";
 import { Hero } from "@/components/editorial/Hero";
@@ -10,6 +9,8 @@ import { Story } from "@/components/editorial/Story";
 import { WorkWithMe } from "@/components/editorial/WorkWithMe";
 import { Newsletter } from "@/components/editorial/Newsletter";
 import { Footer } from "@/components/editorial/Footer";
+
+export const metadata = pageMeta({ description: HOME_DESCRIPTION, path: "/" });
 
 // Hero → Masterpiece → Ideas → One City/Fyreworks → Story → Work With Me → Newsletter → Footer
 export default function Home() {

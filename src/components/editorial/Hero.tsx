@@ -62,7 +62,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease, delay: 0.05 }}
           >
-            My name is
+            Hi, I&apos;m
           </m.p>
           <m.h1 className="hero-name text-center" initial={{ opacity: 0, y: 60 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.1, ease, delay: 0.15 }}>
             Jesse <span className="accent">Dan-Yusuf</span>
