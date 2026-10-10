@@ -4,13 +4,13 @@ import type { Metadata } from "next";
 export const SITE_URL = "https://jessedanyusuf.com";
 export const SITE_NAME = "Jesse Dan-Yusuf";
 export const TAGLINE = "I help people find their story in God's story.";
-export const HOME_TITLE = "Jesse Dan-Yusuf | Pastor, Creator & Entrepreneur";
+export const HOME_TITLE = "Jesse Dan-Yusuf | Pastor, Creator, Entrepreneur & Author";
 export const HOME_DESCRIPTION =
   "Jesse Dan-Yusuf helps people find their story in God's story. Lead Pastor of One City Church in Abuja, leading the creative studio Fyreworks, and writing Masterpiece: ideas for becoming who God made you to be.";
 
 /** 1200×630 share card used by Facebook, LinkedIn, WhatsApp, X, iMessage and Slack previews. */
 export const OG_IMAGE = {
-  url: "/images/og-jesse-dan-yusuf.jpg",
+  url: "/images/og-jesse-dan-yusuf-v2.jpg",
   width: 1200,
   height: 630,
   alt: "Jesse Dan-Yusuf: I help people find their story in God's story.",

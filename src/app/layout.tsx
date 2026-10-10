@@ -36,6 +36,7 @@ export const metadata: Metadata = {
     "pastor",
     "creator",
     "entrepreneur",
+    "author",
     "faith and creativity",
     "calling",
     "Christian leadership",
@@ -106,7 +107,7 @@ export default function RootLayout({
                   url: siteUrl,
                   image: `${siteUrl}${OG_IMAGE.url}`,
                   description: TAGLINE,
-                  jobTitle: ["Lead Pastor", "Creator", "Entrepreneur"],
+                  jobTitle: ["Lead Pastor", "Creator", "Entrepreneur", "Author"],
                   worksFor: [
                     { "@type": "Church", name: "One City Church Abuja", url: "https://www.onecityabuja.com" },
                     { "@type": "Organization", name: "Fyreworks", url: "https://www.fyreworks.co" },

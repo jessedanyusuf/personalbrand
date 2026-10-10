@@ -78,7 +78,7 @@ export function Hero() {
             <p className="display-md max-w-[30ch] [text-wrap:balance]">
               I help people find their story in <span className="accent">God&apos;s story.</span>
             </p>
-            <p className="lead-in mt-3 md:mt-4">Pastor &middot; Creator &middot; Entrepreneur</p>
+            <p className="lead-in mt-3 md:mt-4">Pastor &middot; Creator &middot; Entrepreneur &middot; Author</p>
             <div className="flex flex-wrap justify-center gap-3 mt-6 md:mt-8">
               <a href={links.masterpiece} target="_blank" rel="noopener noreferrer" className="pill pill-solid">
                 Read Masterpiece

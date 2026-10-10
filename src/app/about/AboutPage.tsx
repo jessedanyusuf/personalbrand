@@ -57,7 +57,7 @@ export function AboutPage() {
           <p>I believe every person has a story, and that our stories make the most sense when we find them in God&apos;s story.</p>
           <p>That&apos;s the thread running through my life and work.</p>
           <p>
-            I&apos;m a pastor, creator and entrepreneur. I serve as Lead Pastor of One City Church in Abuja, where I&apos;m helping build a gospel
+            I&apos;m a pastor, creator, entrepreneur and author. I serve as Lead Pastor of One City Church in Abuja, where I&apos;m helping build a gospel
             movement centred on Jesus and committed to seeing everyone, everywhere, become one with God.
           </p>
           <p>I also lead Fyreworks, a creative studio helping visionaries turn ideas into meaningful work and build things that matter.</p>
