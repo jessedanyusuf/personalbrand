@@ -16,7 +16,8 @@ export function Book() {
     <section id="book" className="container-x py-24 md:py-40 scroll-mt-24">
       <div className="grid grid-cols-12 gap-x-6 gap-y-14 items-center">
         <Reveal className="col-span-12 md:col-span-5 lg:col-span-4 lg:col-start-2">
-          <Float amount={36}>
+          {/* Parallax: the cover travels a long way against the scroll while the copy drifts the other way */}
+          <Float amount={90}>
             {/* The cover has a transparent background, so it sits straight on the page; the glow lifts its dark lower half off the black */}
             <div className="relative mx-auto w-[68%] max-w-[340px] md:w-full md:max-w-[400px]">
               <div className="absolute -inset-8 rounded-full bg-white/[0.07] blur-3xl" aria-hidden />
@@ -32,11 +33,11 @@ export function Book() {
           </Float>
         </Reveal>
 
-        <div className="col-span-12 md:col-span-6 md:col-start-7 text-center md:text-left">
+        <Float amount={-28} className="col-span-12 md:col-span-6 md:col-start-7 text-center md:text-left">
           <Reveal>
             <h2 className="display-xl">Masterpiece</h2>
             <p className="display-md mt-4 md:mt-6 max-w-[20ch] mx-auto md:mx-0">
-              The Art of Finding Your Story in <span className="accent">God&apos;s Story.</span>
+              The Art of Finding Your Story in God&apos;s Story.
             </p>
           </Reveal>
           <Reveal delay={0.1}>
@@ -51,7 +52,7 @@ export function Book() {
               <ArrowRight className="w-4 h-4 transition-transform duration-500 group-hover:translate-x-1" strokeWidth={1.75} aria-hidden />
             </a>
           </Reveal>
-        </div>
+        </Float>
       </div>
     </section>
   );
