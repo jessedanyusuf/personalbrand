@@ -1,8 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { links } from "@/lib/site";
+import { cn } from "@/lib/utils";
 import { Countdown } from "./Countdown";
 import { Float } from "./Float";
 import { Reveal } from "./Reveal";
@@ -13,6 +15,7 @@ const RELEASE_LABEL = "31 January 2027";
 
 /** The Masterpiece book: the cover floating on the black ground beside its title. */
 export function Book() {
+  const [open, setOpen] = useState(false);
   return (
     <section id="book" className="container-x py-24 md:py-40 scroll-mt-24">
       <div className="grid grid-cols-12 gap-x-6 gap-y-14 items-center">
@@ -42,6 +45,30 @@ export function Book() {
             </p>
           </Reveal>
           <Reveal delay={0.1}>
+            {/* Two lines by default; "See more" opens the rest of the description and the heart of the book */}
+            <div className="max-w-lg mx-auto md:mx-0 mt-6 md:mt-8">
+              <p id="book-description" className={cn("body", !open && "line-clamp-2")}>
+                Masterpiece is a journey of discovering how God takes every part of our story&mdash;our joys, struggles, failures, gifts, and
+                even the chapters we wish we could rewrite&mdash;and, through his grace, shapes us into the people he created us to be.
+              </p>
+              <div className={cn("grid transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]", open ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0")}>
+                <div className="overflow-hidden">
+                  <p className="pt-4 text-[15px] md:text-base leading-[1.6]">
+                    We are not simply trying to make something beautiful of our lives. We are discovering the beauty of what God has already
+                    begun in us through Christ.
+                  </p>
+                </div>
+              </div>
+              <button
+                type="button"
+                onClick={() => setOpen((v) => !v)}
+                aria-expanded={open}
+                aria-controls="book-description"
+                className="mt-3 text-[14px] font-medium border-b border-white/40 pb-0.5 hover:border-white transition-colors"
+              >
+                {open ? "See less" : "See more"}
+              </button>
+            </div>
             <p className="lede mt-6 md:mt-8">A book by Jesse Dan-Yusuf. Coming {RELEASE_LABEL}.</p>
           </Reveal>
           <Reveal delay={0.15} className="mt-10 md:mt-12">

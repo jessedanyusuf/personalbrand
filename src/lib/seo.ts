@@ -19,6 +19,15 @@ export const OG_IMAGE = {
 
 export const TWITTER_HANDLE = "@jessedanyusuf";
 
+/** The Masterpiece book, for search engines' structured data. */
+export const BOOK = {
+  name: "Masterpiece: The Art of Finding Your Story in God's Story",
+  description:
+    "Masterpiece is about how God, through his grace, shapes us into the people he created us to be, helping us discover who we are, why we're here, and how our lives find their deepest meaning in his greater story.",
+  datePublished: "2027-01-31",
+  image: "/images/masterpiece-book.webp",
+};
+
 export const SAME_AS = [
   "https://www.instagram.com/jessedanyusuf",
   "https://www.tiktok.com/@jessedanyusuf",

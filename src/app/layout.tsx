@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { HOME_DESCRIPTION, HOME_TITLE, OG_IMAGE, SAME_AS, SITE_NAME, SITE_URL, TAGLINE, TWITTER_HANDLE } from "@/lib/seo";
+import { BOOK, HOME_DESCRIPTION, HOME_TITLE, OG_IMAGE, SAME_AS, SITE_NAME, SITE_URL, TAGLINE, TWITTER_HANDLE } from "@/lib/seo";
 import { Instrument_Serif, Inter } from "next/font/google";
 import "./globals.css";
 import { Instagram, Youtube, Twitter, Mail, Linkedin, Facebook } from "lucide-react";
@@ -115,6 +115,17 @@ export default function RootLayout({
                   address: { "@type": "PostalAddress", addressLocality: "Abuja", addressCountry: "NG" },
                   knowsAbout: ["Faith", "Creativity", "Calling", "Leadership", "Storytelling", "Personal brand", "Meaningful work"],
                   sameAs: SAME_AS,
+                },
+                {
+                  "@type": "Book",
+                  "@id": `${siteUrl}/#masterpiece-book`,
+                  name: BOOK.name,
+                  description: BOOK.description,
+                  author: { "@id": `${siteUrl}/#jesse` },
+                  datePublished: BOOK.datePublished,
+                  image: `${siteUrl}${BOOK.image}`,
+                  url: `${siteUrl}/#book`,
+                  inLanguage: "en",
                 },
                 {
                   "@type": "WebSite",
