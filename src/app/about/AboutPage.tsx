@@ -51,7 +51,7 @@ export function AboutPage() {
         }
       >
         <p className="display-md max-w-xl">
-          One story. <span className="accent">Many expressions.</span>
+          What I <span className="accent">Do</span>
         </p>
         <div className="body space-y-4 max-w-lg mt-6 md:mt-8">
           <p>I believe every person has a story, and that our stories make the most sense when we find them in God&apos;s story.</p>
@@ -65,9 +65,6 @@ export function AboutPage() {
             And through Masterpiece, I write and teach about faith, creativity, calling and the journey of becoming who God made us to be.
           </p>
         </div>
-        <p className="text-xl md:text-2xl leading-[1.2] tracking-[-0.035em] mt-6 md:mt-8">
-          Different expressions. <span className="accent">One story.</span>
-        </p>
       </PageHero>
 
       {/* Statement */}

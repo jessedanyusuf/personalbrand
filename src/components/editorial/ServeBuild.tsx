@@ -57,7 +57,8 @@ function Card({ id, kicker, title, name, description, href, visual, align, drift
             {/* Scrim so the copy reads on the picture */}
             <div className={cn("absolute inset-0 from-black/80 via-black/15 to-transparent", top ? "bg-gradient-to-b" : "bg-gradient-to-t")} />
             <div className={cn("absolute inset-x-0 p-5 md:p-7", top ? "top-0" : "bottom-0")}>
-              <p className="label !text-white/75">{kicker}</p>
+              {/* Role in the italic serif, name in the sans */}
+              <p className="accent text-lg md:text-xl leading-none text-white/80">{kicker}</p>
               <h3 className="display-md mt-1.5">{title}</h3>
               {/* Collapsed to no height until hover or focus; always open on touch screens */}
               <div className="grid grid-rows-[0fr] opacity-0 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:grid-rows-[1fr] group-hover:opacity-100 group-focus-visible:grid-rows-[1fr] group-focus-visible:opacity-100 [@media(hover:none)]:grid-rows-[1fr] [@media(hover:none)]:opacity-100">
@@ -80,12 +81,12 @@ export function ServeBuild() {
       <Reveal>
         <Float amount={20}>
           <h2 className="display-xl max-w-[14ch]">
-            One story. <span className="accent">Many expressions.</span>
+            What I <span className="accent">Do</span>
           </h2>
         </Float>
       </Reveal>
 
-      {/* Three expressions of one calling: the middle card sits lower and drifts faster, so the row reads as a wave */}
+      {/* The three things Jesse does: the middle card sits lower and drifts faster, so the row reads as a wave */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-6 lg:gap-x-10 gap-y-16 mt-14 md:mt-24 items-start">
         <Card
           id="serving"
@@ -94,7 +95,7 @@ export function ServeBuild() {
           innerParallax
           kicker="Pastoring"
           name="Pastoring: One City Church"
-          title={<span className="accent">One City Church</span>}
+          title="One City Church"
           description="Helping people become one with God and building a gospel movement from Abuja to the ends of the earth."
           href={links.oneCity}
           visual={
@@ -116,7 +117,7 @@ export function ServeBuild() {
           innerParallax
           kicker="Building"
           name="Building: Fyreworks"
-          title={<span className="accent">Fyreworks</span>}
+          title="Fyreworks"
           description="A creative studio helping visionaries turn bold ideas into meaningful impact."
           href={links.fyreworks}
           visual={
@@ -137,7 +138,7 @@ export function ServeBuild() {
           innerParallax
           kicker="Writing & Teaching"
           name="Writing and teaching: Masterpiece"
-          title={<span className="accent">Masterpiece</span>}
+          title="Masterpiece"
           description="Exploring faith, creativity, calling and becoming who God made us to be."
           href={links.masterpiece}
           visual={
