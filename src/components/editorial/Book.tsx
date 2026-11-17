@@ -13,11 +13,11 @@ import { Reveal } from "./Reveal";
 const RELEASE = "2027-01-31T00:00:00+01:00";
 const RELEASE_LABEL = "31 January 2027";
 
-/** The Masterpiece book: the cover floating on the black ground beside its title. */
-export function Book() {
+/** The Masterpiece book: the cover floating on the black ground beside its title. `className` sets the section's vertical padding. */
+export function Book({ className = "py-24 md:py-40" }: { className?: string }) {
   const [open, setOpen] = useState(false);
   return (
-    <section id="book" className="container-x py-24 md:py-40 scroll-mt-24">
+    <section id="book" className={cn("container-x scroll-mt-24", className)}>
       <div className="grid grid-cols-12 gap-x-6 gap-y-14 items-center">
         <Reveal className="col-span-12 md:col-span-5 lg:col-span-4 lg:col-start-2">
           {/* Parallax: the cover travels a long way against the scroll while the copy drifts the other way */}

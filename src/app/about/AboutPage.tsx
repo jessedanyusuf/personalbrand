@@ -8,6 +8,7 @@ import { Nav } from "@/components/editorial/Nav";
 import { PageHero } from "@/components/editorial/PageHero";
 import { Float } from "@/components/editorial/Float";
 import { Reveal } from "@/components/editorial/Reveal";
+import { Book } from "@/components/editorial/Book";
 import { Newsletter } from "@/components/editorial/Newsletter";
 import { Footer } from "@/components/editorial/Footer";
 
@@ -142,6 +143,9 @@ export function AboutPage() {
           </div>
         </div>
       </section>
+
+      {/* Writing: the Masterpiece book */}
+      <Book className="pb-20 md:pb-36" />
 
       {/* Faith & family */}
       <section className="container-x pb-20 md:pb-36">
