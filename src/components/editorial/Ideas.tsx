@@ -61,9 +61,19 @@ const steps: Step[] = [
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
-const Heading = () => (
-  <h2 className="display-lg lg:display-xl max-w-[14ch]">
-    Masterpiece <span className="accent">by Jesse Dan-Yusuf.</span>
+// Read, Listen and Watch are the section's heading. `active` lights the step on show (all three when undefined).
+const headingSize = "text-[clamp(1.9rem,4vw,3.75rem)] leading-none tracking-[-0.05em] font-medium";
+
+const Heading = ({ active }: { active?: number }) => (
+  <h2 className={cn(headingSize, "flex flex-wrap gap-x-[0.45em] gap-y-2")}>
+    {steps.map((s, i) => (
+      <span
+        key={s.n}
+        className={cn("transition-colors duration-500", active === undefined || i === active ? "text-[color:var(--paper)]" : "text-white/25")}
+      >
+        {s.verb}
+      </span>
+    ))}
   </h2>
 );
 
@@ -160,22 +170,8 @@ function IdeasPinned() {
         <div className="container-x w-full grid grid-cols-12 gap-x-6 gap-y-5 items-center pt-20 lg:pt-0">
           <div className="col-span-12 lg:col-span-6 min-w-0">
             <div className="mb-6 md:mb-8">
-              <Heading />
+              <Heading active={active} />
             </div>
-            <ol className="flex flex-wrap gap-x-6 gap-y-1">
-              {steps.map((s, i) => (
-                <li
-                  key={s.n}
-                  className={cn(
-                    "micro inline-flex items-center gap-1.5 transition-colors duration-500",
-                    i === active ? "!text-[color:var(--paper)]" : "!text-[color:var(--paper-40)]"
-                  )}
-                >
-                  <s.icon className="w-3.5 h-3.5" strokeWidth={1.75} aria-hidden />
-                  {s.verb}
-                </li>
-              ))}
-            </ol>
             <div className="relative h-px w-40 bg-white/10 mt-4 mb-6 md:mb-8 overflow-hidden" aria-hidden>
               <m.span className="absolute inset-0 origin-left bg-[color:var(--paper)]" style={{ scaleX: scrollYProgress }} />
             </div>
