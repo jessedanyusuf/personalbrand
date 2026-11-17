@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+import { links } from "@/lib/site";
 import { Countdown } from "./Countdown";
 import { Float } from "./Float";
 import { Reveal } from "./Reveal";
@@ -47,7 +48,8 @@ export function Book() {
             <Countdown to={RELEASE} label={`Masterpiece comes out on ${RELEASE_LABEL}`} />
           </Reveal>
           <Reveal delay={0.2} className="mt-10 md:mt-12">
-            <a href="/#newsletter" className="pill pill-solid !h-12 !px-6 group">
+            {/* The waitlist is the Masterpiece Substack for now */}
+            <a href={`${links.masterpiece}/subscribe`} target="_blank" rel="noopener noreferrer" className="pill pill-solid !h-12 !px-6 group">
               Join the waitlist
               <ArrowRight className="w-4 h-4 transition-transform duration-500 group-hover:translate-x-1" strokeWidth={1.75} aria-hidden />
             </a>
